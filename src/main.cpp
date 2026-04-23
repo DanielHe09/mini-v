@@ -4,8 +4,10 @@
 #include <crow.h>
 #include <nlohmann/json.hpp>
 
+#include <cmath>
 #include <cstdlib>
 #include <iostream>
+#include <optional>
 #include <system_error>
 
 // Roughly: int(os.environ.get("PORT", "18080")) with validation.
@@ -40,27 +42,75 @@ int main() {
     // C++ lambdas used as callbacks are extremely common in C++ web code.
     CROW_ROUTE(app, "/generate")
         .methods(crow::HTTPMethod::Post)([](const crow::request& req) {
-            // Parse JSON body if present (FastAPI would do this via a Pydantic model param).
+            auto json_error = [](int status, const char* message) {
+                crow::response res(status, nlohmann::json{{"error", message}}.dump());
+                res.set_header("Content-Type", "application/json");
+                return res;
+            };
+
+            // Parse JSON body (expect a single object, like a FastAPI JSON body model).
             nlohmann::json body = nlohmann::json::object();
             if (!req.body.empty()) {
                 try {
                     body = nlohmann::json::parse(req.body);
                 } catch (const nlohmann::json::parse_error&) {
-                    crow::response res(400, R"({"error":"invalid json"})");
-                    res.set_header("Content-Type", "application/json");
-                    return res;
+                    return json_error(400, "invalid json");
                 }
             }
 
-            // Build a JSON object (initializer list syntax; like a dict literal).
+            if (!body.is_object()) {
+                return json_error(400, "body must be a JSON object");
+            }
+
+            //extract some basic parameters like prompt, max_tokens, temperature. Last 2 are optional
+            if (!body.contains("prompt") || !body["prompt"].is_string()) {
+                return json_error(400, R"(field "prompt" (string) is required)");
+            }
+            const std::string prompt = body["prompt"].get<std::string>();
+
+            std::optional<int> max_tokens;
+            if (body.contains("max_tokens")) {
+                const auto& v = body["max_tokens"];
+                if (!v.is_number()) {
+                    return json_error(400, R"(field "max_tokens" must be a number)");
+                }
+                const double x = v.get<double>();
+                if (!std::isfinite(x) || x < 0.0 || x > 1'000'000.0 || x != std::floor(x)) {
+                    return json_error(400,
+                                      R"(field "max_tokens" must be a non-negative integer at most 1000000)");
+                }
+                max_tokens = static_cast<int>(x);
+            }
+
+            std::optional<double> temperature;
+            if (body.contains("temperature")) {
+                const auto& v = body["temperature"];
+                if (!v.is_number()) {
+                    return json_error(400, R"(field "temperature" must be a number)");
+                }
+                const double t = v.get<double>();
+                if (!std::isfinite(t) || t < 0.0 || t > 2.0) {
+                    return json_error(400, R"(field "temperature" must be a finite number between 0 and 2)");
+                }
+                temperature = t;
+            }
+
+            // Echo only the fields we understood (like returning validated params + result).
+            nlohmann::json params = {{"prompt", prompt}};
+            if (max_tokens.has_value()) {
+                params["max_tokens"] = *max_tokens;
+            }
+            if (temperature.has_value()) {
+                params["temperature"] = *temperature;
+            }
+
             const nlohmann::json response = {
                 {"ok", true},
                 {"model", "stub"},
-                {"echo", body},
+                {"params", params},
                 {"output", "hardcoded fake completion for POST /generate"},
             };
 
-            // .dump() -> JSON string (like json.dumps). crow::response is the HTTP response type.
             crow::response res(response.dump());
             res.set_header("Content-Type", "application/json");
             return res;
