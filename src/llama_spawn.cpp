@@ -64,7 +64,8 @@ LlamaRunResult run_llama_completion(const std::string_view prompt, const int max
     }
 
     const char* cli_env = std::getenv("LLAMA_CLI");
-    const std::string cli = (cli_env && *cli_env) ? std::string(cli_env) : std::string("llama-cli");
+    const std::string cli =
+        (cli_env && *cli_env) ? std::string(cli_env) : std::string("llama-completion");
 
     if (cli.find('/') != std::string::npos) {
         if (::access(cli.c_str(), X_OK) != 0) {
@@ -187,7 +188,7 @@ LlamaRunResult run_llama_completion(const std::string_view prompt, const int max
 
     if (!WIFEXITED(status) || WEXITSTATUS(status) != 0) {
         std::ostringstream oss;
-        oss << "llama-cli failed";
+        oss << "llama inference process failed";
         if (WIFEXITED(status)) {
             oss << " (exit " << WEXITSTATUS(status) << ")";
         }
