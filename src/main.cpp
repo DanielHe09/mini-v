@@ -1,7 +1,7 @@
 // Crow = small C++ HTTP framework (think Starlette/Flask-level, not batteries-included like FastAPI).
 // nlohmann::json = JSON as nested maps/arrays (think Python dict + json.loads / dumps).
 
-#include "llama_spawn.hpp"
+#include "model_runner.hpp"
 
 #include <crow.h>
 #include <nlohmann/json.hpp>
@@ -10,7 +10,6 @@
 #include <cstdlib>
 #include <cstring>
 #include <iostream>
-#include <mutex>
 #include <optional>
 #include <string>
 #include <system_error>
@@ -31,20 +30,11 @@ static uint16_t port_from_env() {
     return static_cast<uint16_t>(v);
 }
 
-static std::string basename_path(const std::string& path) {
-    const auto pos = path.find_last_of('/');
-    if (pos == std::string::npos) {
-        return path;
-    }
-    return path.substr(pos + 1);
-}
-
 int main() {
     // One app object; routes register on it (like `app = FastAPI()` then decorators).
     crow::SimpleApp app;
 
-    // One llama subprocess at a time (avoids fighting over GPU/CPU from parallel Crow threads).
-    static std::mutex llama_mutex;
+    ModelRunner model_runner;
 
     // CROW_ROUTE is a macro that expands to "register this path on app".
     // Mental model vs FastAPI:
@@ -57,7 +47,7 @@ int main() {
     // passed as the handler. [=] would capture locals by copy; here we only use `req`.
     // C++ lambdas used as callbacks are extremely common in C++ web code.
     CROW_ROUTE(app, "/generate")
-        .methods(crow::HTTPMethod::Post)([](const crow::request& req) {
+        .methods(crow::HTTPMethod::Post)([&model_runner](const crow::request& req) {
             auto json_error = [](int status, const char* message) {
                 crow::response res(status, nlohmann::json{{"error", message}}.dump());
                 res.set_header("Content-Type", "application/json");
@@ -126,28 +116,17 @@ int main() {
                 params["temperature"] = *temperature;
             }
 
-            const int n_predict = max_tokens.value_or(256);
-
-            const char* model_env = std::getenv("LLAMA_MODEL");
-            const std::string model_label =
-                (model_env && *model_env) ? basename_path(std::string(model_env)) : "unset";
-
-            LlamaRunResult gen;
-            {
-                std::lock_guard<std::mutex> lock(llama_mutex);
-                gen = run_llama_completion(prompt, n_predict, temperature);
-            }
+            const GenerateResult gen =
+                model_runner.generate(prompt, GenerateParams{max_tokens, temperature});
 
             if (!gen.ok) {
-                const bool misconfigured =
-                    (gen.message.compare(0, 11, "LLAMA_MODEL") == 0) || (gen.message.compare(0, 9, "LLAMA_CLI") == 0);
-                const int status = misconfigured ? 503 : 502;
+                const int status = gen.misconfigured ? 503 : 502;
                 return json_error_string(status, gen.message);
             }
 
             const nlohmann::json response = {
                 {"ok", true},
-                {"model", model_label},
+                {"model", gen.model_label},
                 {"params", params},
                 {"output", gen.output},
             };
