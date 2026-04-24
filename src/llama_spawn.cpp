@@ -12,6 +12,7 @@ LlamaRunResult run_llama_completion(std::string_view /*prompt*/, int /*max_token
 #include <algorithm>
 
 #include <fcntl.h>
+#include <sys/stat.h>
 #include <sys/wait.h>
 #include <unistd.h>
 
@@ -53,8 +54,25 @@ LlamaRunResult run_llama_completion(const std::string_view prompt, const int max
         return {false, "LLAMA_MODEL is not set (absolute path to a .gguf file)", ""};
     }
 
+    struct stat st_model{};
+    if (::stat(model_env, &st_model) != 0) {
+        return {false, std::string("LLAMA_MODEL path does not exist: ") + model_env + " (" + std::strerror(errno) + ")",
+                ""};
+    }
+    if (!S_ISREG(st_model.st_mode)) {
+        return {false, std::string("LLAMA_MODEL is not a regular file: ") + model_env, ""};
+    }
+
     const char* cli_env = std::getenv("LLAMA_CLI");
     const std::string cli = (cli_env && *cli_env) ? std::string(cli_env) : std::string("llama-cli");
+
+    if (cli.find('/') != std::string::npos) {
+        if (::access(cli.c_str(), X_OK) != 0) {
+            return {false, std::string("LLAMA_CLI is not an executable file: ") + cli + " (" + std::strerror(errno) +
+                            ")",
+                    ""};
+        }
+    }
 
     char tmpl[] = "/tmp/mini-v-prompt-XXXXXX";
     const int prompt_fd = ::mkstemp(tmpl);

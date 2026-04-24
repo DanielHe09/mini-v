@@ -139,9 +139,9 @@ int main() {
             }
 
             if (!gen.ok) {
-                static constexpr const char* k_model_env_hint = "LLAMA_MODEL is not set";
-                const int status =
-                    (gen.message.compare(0, std::strlen(k_model_env_hint), k_model_env_hint) == 0) ? 503 : 502;
+                const bool misconfigured =
+                    (gen.message.compare(0, 11, "LLAMA_MODEL") == 0) || (gen.message.compare(0, 9, "LLAMA_CLI") == 0);
+                const int status = misconfigured ? 503 : 502;
                 return json_error_string(status, gen.message);
             }
 
