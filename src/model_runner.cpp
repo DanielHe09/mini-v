@@ -4,7 +4,10 @@
 
 #include <chrono>
 #include <cstdlib>
+#include <exception>
+#include <stdexcept>
 #include <string>
+#include <utility>
 
 namespace {
 
@@ -18,27 +21,71 @@ std::string basename_path(const std::string& path) {
 
 } // namespace
 
-GenerateResult ModelRunner::generate(const std::string_view prompt, const GenerateParams& params,
-                                     const std::chrono::steady_clock::time_point request_started_at) {
-    const int n_predict = params.max_tokens.value_or(256);
+ModelRunner::ModelRunner() : worker_(&ModelRunner::worker_loop, this) {}
+
+ModelRunner::~ModelRunner() {
+    {
+        const std::lock_guard<std::mutex> lock(mutex_);
+        stopping_ = true;
+    }
+    cv_.notify_all();
+    if (worker_.joinable()) {
+        worker_.join();
+    }
+}
+
+ModelRunner::RequestPtr ModelRunner::submit(std::string prompt, GenerateParams params,
+                                            const std::chrono::steady_clock::time_point request_started_at) {
+    RequestPtr request;
+    {
+        const std::lock_guard<std::mutex> lock(mutex_);
+        if (stopping_) {
+            throw std::runtime_error("model runner is stopping");
+        }
+        request = std::make_shared<InferenceRequest>(next_request_id_++, std::move(prompt), std::move(params),
+                                                     request_started_at);
+        pending_.push(request);
+    }
+    cv_.notify_one();
+    return request;
+}
+
+void ModelRunner::worker_loop() {
+    for (;;) {
+        RequestPtr request;
+        {
+            std::unique_lock<std::mutex> lock(mutex_);
+            cv_.wait(lock, [this] { return stopping_ || !pending_.empty(); });
+            if (stopping_ && pending_.empty()) {
+                return;
+            }
+            request = std::move(pending_.front());
+            pending_.pop();
+        }
+
+        try {
+            request->result = run_request(*request);
+            request->result_promise_.set_value(request->result);
+        } catch (...) {
+            request->result_promise_.set_exception(std::current_exception());
+        }
+    }
+}
+
+GenerateResult ModelRunner::run_request(const InferenceRequest& request) {
+    const int n_predict = request.params.max_tokens.value_or(256);
 
     const char* model_env = std::getenv("LLAMA_MODEL");
     const std::string model_label =
         (model_env && *model_env) ? basename_path(std::string(model_env)) : "unset";
 
-    LlamaRunResult gen;
-    std::chrono::nanoseconds model_duration{0};
-    std::chrono::nanoseconds since_request_at_model_start{0};
-    {
-        const std::lock_guard<std::mutex> lock(mutex_);
-        const auto t_model_start = std::chrono::steady_clock::now();
-        since_request_at_model_start =
-            std::chrono::duration_cast<std::chrono::nanoseconds>(t_model_start - request_started_at);
-        gen = run_llama_completion(prompt, n_predict, params.temperature);
-        const auto t_model_end = std::chrono::steady_clock::now();
-        model_duration =
-            std::chrono::duration_cast<std::chrono::nanoseconds>(t_model_end - t_model_start);
-    }
+    const auto t_model_start = std::chrono::steady_clock::now();
+    const auto since_request_at_model_start =
+        std::chrono::duration_cast<std::chrono::nanoseconds>(t_model_start - request.request_started_at);
+    LlamaRunResult gen = run_llama_completion(request.prompt, n_predict, request.params.temperature);
+    const auto t_model_end = std::chrono::steady_clock::now();
+    const auto model_duration =
+        std::chrono::duration_cast<std::chrono::nanoseconds>(t_model_end - t_model_start);
 
     GenerateResult out;
     out.model_label = model_label;

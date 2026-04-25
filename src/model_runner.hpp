@@ -1,12 +1,15 @@
 #pragma once
 
 #include <chrono>
+#include <condition_variable>
 #include <cstdint>
 #include <future>
+#include <memory>
 #include <mutex>
 #include <optional>
+#include <queue>
 #include <string>
-#include <string_view>
+#include <thread>
 #include <utility>
 
 struct GenerateParams {
@@ -38,6 +41,8 @@ struct InferenceRequest {
     GenerateResult result;
 
 private:
+    friend class ModelRunner;
+
     std::promise<GenerateResult> result_promise_;
 
 public:
@@ -56,12 +61,28 @@ public:
     InferenceRequest& operator=(const InferenceRequest&) = delete;
 };
 
-// Owns serialization of inference (one completion at a time) and delegates to the llama subprocess backend.
+// Owns request scheduling for inference and delegates execution to the llama subprocess backend.
 class ModelRunner {
 public:
-    GenerateResult generate(std::string_view prompt, const GenerateParams& params,
-                            std::chrono::steady_clock::time_point request_started_at);
+    using RequestPtr = std::shared_ptr<InferenceRequest>;
+
+    ModelRunner();
+    ~ModelRunner();
+
+    ModelRunner(const ModelRunner&) = delete;
+    ModelRunner& operator=(const ModelRunner&) = delete;
+
+    RequestPtr submit(std::string prompt, GenerateParams params,
+                      std::chrono::steady_clock::time_point request_started_at);
 
 private:
+    void worker_loop();
+    GenerateResult run_request(const InferenceRequest& request);
+
     std::mutex mutex_;
+    std::condition_variable cv_;
+    std::queue<RequestPtr> pending_;
+    bool stopping_ = false;
+    InferenceRequest::Id next_request_id_ = 1;
+    std::thread worker_;
 };
