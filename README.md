@@ -1,24 +1,30 @@
 ## Benchmarking
 
-Start the server version you want to measure, then run:
+The micro-batcher does not force an exact batch size. Instead, the benchmark
+changes client concurrency and measures the batch sizes the scheduler actually
+forms during the 50ms batching window. In practice, concurrency is the control
+knob and observed average batch size is the batching result.
 
-```sh
-python3 scripts/bench.py --label micro-batched --requests 50 --concurrency 8
-```
-
-To include average scheduler batch size, capture server stderr and pass it back:
+Start the server and capture scheduler logs:
 
 ```sh
 ./build/server 2>server.log
-python3 scripts/bench.py --label micro-batched --requests 50 --concurrency 8 --server-log server.log
 ```
 
-Use the same script against different builds or branches to compare modes:
+Then run the same benchmark at different concurrency levels:
 
 ```sh
-python3 scripts/bench.py --label direct-sync --requests 50 --concurrency 8
-python3 scripts/bench.py --label queued-worker --requests 50 --concurrency 8
-python3 scripts/bench.py --label micro-batched --requests 50 --concurrency 8 --server-log server.log
+python3 scripts/bench.py --label batch --requests 50 --concurrency-sweep 1,2,4,8,16 --server-log server.log
+```
+
+These runs are effectively testing different observed batch-size regimes:
+higher concurrency gives more requests a chance to arrive inside the batching
+window, so average batch size should generally rise.
+
+For a single run:
+
+```sh
+python3 scripts/bench.py --label batch --requests 50 --concurrency 8 --server-log server.log
 ```
 
 The script prints a Markdown table with average latency, p95 latency, requests/sec,

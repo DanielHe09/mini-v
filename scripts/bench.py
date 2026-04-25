@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 """Benchmark mini-v /generate latency and throughput.
 
-Run this against an already-running server. To compare direct, queued, and
-micro-batched versions, start each version separately and pass a different
---label for each run.
+Run this against an already-running server. For the current micro-batched
+server, use --concurrency-sweep to test different observed batch-size regimes.
 """
 
 from __future__ import annotations
@@ -30,12 +29,19 @@ def percentile(values: list[float], pct: float) -> float:
     return ordered[index]
 
 
-def parse_batch_sizes(path: Path | None) -> list[int]:
+def log_offset(path: Path | None) -> int:
+    if path is None or not path.exists():
+        return 0
+    return path.stat().st_size
+
+
+def parse_batch_sizes(path: Path | None, offset: int = 0) -> list[int]:
     if path is None or not path.exists():
         return []
 
     sizes: list[int] = []
     with path.open("r", encoding="utf-8", errors="replace") as handle:
+        handle.seek(offset)
         for line in handle:
             match = BATCH_SIZE_RE.search(line)
             if match:
@@ -72,14 +78,15 @@ def post_generate(url: str, prompt: str, max_tokens: int, temperature: float) ->
     return elapsed_ms, ok
 
 
-def run_benchmark(args: argparse.Namespace) -> dict[str, object]:
+def run_benchmark(args: argparse.Namespace, concurrency: int, label: str) -> dict[str, object]:
     url = args.url.rstrip("/") + "/generate"
     prompts = [f"{args.prompt} #{i}" for i in range(args.requests)]
+    batch_log_offset = log_offset(args.server_log)
 
     started = time.perf_counter()
     latencies_ms: list[float] = []
     failures = 0
-    with ThreadPoolExecutor(max_workers=args.concurrency) as executor:
+    with ThreadPoolExecutor(max_workers=concurrency) as executor:
         futures = [
             executor.submit(post_generate, url, prompt, args.max_tokens, args.temperature)
             for prompt in prompts
@@ -91,12 +98,14 @@ def run_benchmark(args: argparse.Namespace) -> dict[str, object]:
                 failures += 1
     total_s = time.perf_counter() - started
 
-    batch_sizes = parse_batch_sizes(args.server_log)
+    # Give redirected stderr a moment to flush before reading only this run's log lines.
+    time.sleep(0.05)
+    batch_sizes = parse_batch_sizes(args.server_log, batch_log_offset)
     successes = args.requests - failures
     return {
-        "label": args.label,
+        "label": label,
         "requests": args.requests,
-        "concurrency": args.concurrency,
+        "concurrency": concurrency,
         "successes": successes,
         "failures": failures,
         "avg_latency_ms": statistics.fmean(latencies_ms) if latencies_ms else 0.0,
@@ -107,25 +116,41 @@ def run_benchmark(args: argparse.Namespace) -> dict[str, object]:
     }
 
 
-def print_markdown_table(row: dict[str, object]) -> None:
-    avg_batch_size = row["avg_batch_size"]
-    batch_text = "-" if avg_batch_size is None else f"{avg_batch_size:.2f}"
-    print("| mode | requests | concurrency | success | fail | avg latency ms | p95 latency ms | req/s | avg batch size | batches |")
+def print_markdown_table(rows: list[dict[str, object]]) -> None:
+    print("| run | requests | concurrency | success | fail | avg latency ms | p95 latency ms | req/s | avg batch size | batches |")
     print("| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |")
-    print(
-        f"| {row['label']} | {row['requests']} | {row['concurrency']} | "
-        f"{row['successes']} | {row['failures']} | "
-        f"{row['avg_latency_ms']:.2f} | {row['p95_latency_ms']:.2f} | "
-        f"{row['throughput_rps']:.2f} | {batch_text} | {row['observed_batches']} |"
-    )
+    for row in rows:
+        avg_batch_size = row["avg_batch_size"]
+        batch_text = "-" if avg_batch_size is None else f"{avg_batch_size:.2f}"
+        print(
+            f"| {row['label']} | {row['requests']} | {row['concurrency']} | "
+            f"{row['successes']} | {row['failures']} | "
+            f"{row['avg_latency_ms']:.2f} | {row['p95_latency_ms']:.2f} | "
+            f"{row['throughput_rps']:.2f} | {batch_text} | {row['observed_batches']} |"
+        )
+
+
+def parse_concurrency_sweep(value: str) -> list[int]:
+    try:
+        sweep = [int(part.strip()) for part in value.split(",") if part.strip()]
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError("must be a comma-separated list of positive integers") from exc
+    if not sweep or any(item <= 0 for item in sweep):
+        raise argparse.ArgumentTypeError("must contain at least one positive integer")
+    return sweep
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Benchmark mini-v /generate.")
     parser.add_argument("--url", default="http://127.0.0.1:18080", help="Server base URL.")
-    parser.add_argument("--label", default="micro-batched", help="Mode label for the table row.")
+    parser.add_argument("--label", default="batch", help="Prefix label for benchmark rows.")
     parser.add_argument("--requests", type=int, default=20, help="Total requests to send.")
-    parser.add_argument("--concurrency", type=int, default=4, help="Concurrent client workers.")
+    parser.add_argument("--concurrency", type=int, default=4, help="Concurrent client workers for one run.")
+    parser.add_argument(
+        "--concurrency-sweep",
+        type=parse_concurrency_sweep,
+        help="Comma-separated client concurrency values, e.g. 1,2,4,8,16. Each row observes a different batch-size regime.",
+    )
     parser.add_argument("--max-tokens", type=int, default=16, help="max_tokens sent to /generate.")
     parser.add_argument("--temperature", type=float, default=0.0, help="temperature sent to /generate.")
     parser.add_argument("--prompt", default="Write one short sentence about batching.", help="Prompt prefix.")
@@ -141,8 +166,12 @@ def main() -> int:
     if args.concurrency <= 0:
         parser.error("--concurrency must be positive")
 
-    row = run_benchmark(args)
-    print_markdown_table(row)
+    concurrency_values = args.concurrency_sweep or [args.concurrency]
+    rows = [
+        run_benchmark(args, concurrency, f"{args.label}-c{concurrency}")
+        for concurrency in concurrency_values
+    ]
+    print_markdown_table(rows)
     return 0
 
 
