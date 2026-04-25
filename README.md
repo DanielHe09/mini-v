@@ -123,7 +123,7 @@ python3 scripts/bench.py --label batch --requests 50 --concurrency 8 --server-lo
 The script prints a Markdown table with average latency, p95 latency, requests/sec,
 and average observed batch size when logs are provided.
 
-## Design Tradeoffs
+## Design Tradeoffs/Learnings
 
 - **CLI subprocess backend vs in-process model runtime:** `mini-v` uses a
   separate llama.cpp-compatible subprocess for each generation. This keeps the
