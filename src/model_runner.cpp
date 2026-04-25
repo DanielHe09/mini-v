@@ -5,6 +5,7 @@
 #include <chrono>
 #include <cstdlib>
 #include <exception>
+#include <iostream>
 #include <stdexcept>
 #include <string>
 #include <utility>
@@ -61,7 +62,14 @@ void ModelRunner::worker_loop() {
         }
 
         batch = collect_batch(lock);
+        const std::size_t queue_depth_after_batch = pending_.size();
         lock.unlock();
+
+        if (!batch.empty()) {
+            std::cerr << "[mini-v] scheduler batch_size=" << batch.size() << " request_id_range="
+                      << batch.front()->id << "-" << batch.back()->id
+                      << " queue_depth_after_batch=" << queue_depth_after_batch << '\n';
+        }
 
         for (const RequestPtr& request : batch) {
             try {
