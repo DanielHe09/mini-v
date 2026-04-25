@@ -11,6 +11,7 @@
 #include <string>
 #include <thread>
 #include <utility>
+#include <vector>
 
 struct GenerateParams {
     std::optional<int> max_tokens;
@@ -78,6 +79,7 @@ public:
 private:
     void worker_loop();
     GenerateResult run_request(const InferenceRequest& request);
+    std::vector<RequestPtr> collect_batch(std::unique_lock<std::mutex>& lock);
 
     std::mutex mutex_;
     std::condition_variable cv_;
@@ -85,4 +87,6 @@ private:
     bool stopping_ = false;
     InferenceRequest::Id next_request_id_ = 1;
     std::thread worker_;
+
+    static constexpr std::chrono::milliseconds kBatchWindow{50};
 };

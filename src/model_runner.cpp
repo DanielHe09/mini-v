@@ -8,6 +8,7 @@
 #include <stdexcept>
 #include <string>
 #include <utility>
+#include <vector>
 
 namespace {
 
@@ -52,24 +53,48 @@ ModelRunner::RequestPtr ModelRunner::submit(std::string prompt, GenerateParams p
 
 void ModelRunner::worker_loop() {
     for (;;) {
-        RequestPtr request;
-        {
-            std::unique_lock<std::mutex> lock(mutex_);
-            cv_.wait(lock, [this] { return stopping_ || !pending_.empty(); });
-            if (stopping_ && pending_.empty()) {
-                return;
-            }
-            request = std::move(pending_.front());
-            pending_.pop();
+        std::vector<RequestPtr> batch;
+        std::unique_lock<std::mutex> lock(mutex_);
+        cv_.wait(lock, [this] { return stopping_ || !pending_.empty(); });
+        if (stopping_ && pending_.empty()) {
+            return;
         }
 
-        try {
-            request->result = run_request(*request);
-            request->result_promise_.set_value(request->result);
-        } catch (...) {
-            request->result_promise_.set_exception(std::current_exception());
+        batch = collect_batch(lock);
+        lock.unlock();
+
+        for (const RequestPtr& request : batch) {
+            try {
+                request->result = run_request(*request);
+                request->result_promise_.set_value(request->result);
+            } catch (...) {
+                request->result_promise_.set_exception(std::current_exception());
+            }
         }
     }
+}
+
+std::vector<ModelRunner::RequestPtr> ModelRunner::collect_batch(std::unique_lock<std::mutex>& lock) {
+    std::vector<RequestPtr> batch;
+    batch.push_back(std::move(pending_.front()));
+    pending_.pop();
+
+    const auto deadline = std::chrono::steady_clock::now() + kBatchWindow;
+    while (std::chrono::steady_clock::now() < deadline) {
+        if (pending_.empty()) {
+            cv_.wait_until(lock, deadline, [this] { return stopping_ || !pending_.empty(); });
+        }
+
+        while (!pending_.empty()) {
+            batch.push_back(std::move(pending_.front()));
+            pending_.pop();
+        }
+        if (stopping_) {
+            break;
+        }
+    }
+
+    return batch;
 }
 
 GenerateResult ModelRunner::run_request(const InferenceRequest& request) {
