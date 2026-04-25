@@ -153,8 +153,9 @@ int main() {
                 params["temperature"] = *temperature;
             }
 
-            const GenerateResult gen =
-                model_runner.generate(prompt, GenerateParams{max_tokens, temperature}, t_request);
+            const ModelRunner::RequestPtr request =
+                model_runner.submit(prompt, GenerateParams{max_tokens, temperature}, t_request);
+            const GenerateResult gen = request->result_future.get();
 
             if (!gen.ok) {
                 const int status = gen.misconfigured ? 503 : 502;
@@ -163,6 +164,7 @@ int main() {
 
             const nlohmann::json response = {
                 {"ok", true},
+                {"request_id", request->id},
                 {"model", gen.model_label},
                 {"params", params},
                 {"output", gen.output},
