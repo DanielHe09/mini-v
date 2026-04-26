@@ -118,17 +118,33 @@ With the `llama-server` backend, `avg batch size` is still the scheduler batch
 size observed inside `mini-v`. The actual model-level batching happens inside
 `llama-server` through parallel slots and continuous batching.
 
-Start `mini-v` and capture scheduler logs:
+Start `llama-server` in one terminal:
 
 ```sh
+/Users/danielhe/Desktop/mini-v/llama.cpp/build/bin/llama-server \
+  -m "/Users/danielhe/Desktop/ML models/gemma-4-E2B-it-Q4_K_M.gguf" \
+  --host 127.0.0.1 \
+  --port 8080 \
+  --parallel 8 \
+  --cont-batching \
+  -n 16
+```
+
+Then start `mini-v` in another terminal and capture scheduler logs:
+
+```sh
+export LLAMA_SERVER_URL=http://127.0.0.1:8080
 ./build/server 2>server.log
 ```
 
-Then run the same benchmark at different concurrency levels:
+Then run the benchmark sweep:
 
 ```sh
 python3 scripts/bench.py --label batch --requests 50 --concurrency-sweep 1,2,4,8,16 --server-log server.log
 ```
+
+If all rows show `success = 0` and `fail = 50`, check that `llama-server` is
+still running and reachable at `LLAMA_SERVER_URL`.
 
 These runs are effectively testing different observed batch-size regimes:
 higher concurrency gives more requests a chance to arrive inside the batching
@@ -143,20 +159,19 @@ python3 scripts/bench.py --label batch --requests 50 --concurrency 8 --server-lo
 The script prints a Markdown table with average latency, p95 latency, requests/sec,
 and average observed batch size when logs are provided.
 
-### Previous Subprocess Backend Baseline
+### Sample llama-server Backend Run
 
-This sample run was captured before switching to `llama-server`, when the
-backend still launched one `llama-completion` subprocess per request. It is a
-useful baseline for understanding why scheduler-only batching did not improve
-throughput.
+This sample run was captured after switching to `llama-server` as the backend.
+It reflects end-to-end behavior with scheduler batching in `mini-v` plus
+continuous batching in the llama.cpp server.
 
 | run | requests | concurrency | success | fail | avg latency ms | p95 latency ms | req/s | avg batch size | batches |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| batch-c1 | 50 | 1 | 50 | 0 | 2213.84 | 2256.08 | 0.45 | 1.00 | 50 |
-| batch-c2 | 50 | 2 | 50 | 0 | 4121.95 | 4444.37 | 0.48 | 2.00 | 25 |
-| batch-c4 | 50 | 4 | 50 | 0 | 7948.31 | 8469.37 | 0.49 | 3.85 | 13 |
-| batch-c8 | 50 | 8 | 50 | 0 | 15450.70 | 17318.26 | 0.47 | 7.14 | 7 |
-| batch-c16 | 50 | 16 | 50 | 0 | 28056.11 | 35780.01 | 0.48 | 8.33 | 6 |
+| batch-c1 | 50 | 1 | 50 | 0 | 152.86 | 186.02 | 6.54 | 1.00 | 50 |
+| batch-c2 | 50 | 2 | 50 | 0 | 183.05 | 236.90 | 10.92 | 2.00 | 25 |
+| batch-c4 | 50 | 4 | 50 | 0 | 239.39 | 498.64 | 16.26 | 3.85 | 13 |
+| batch-c8 | 50 | 8 | 50 | 0 | 512.74 | 671.89 | 15.02 | 7.14 | 7 |
+| batch-c16 | 50 | 16 | 50 | 0 | 852.73 | 1248.90 | 16.83 | 8.33 | 6 |
 
 Analysis:
 
@@ -167,25 +182,20 @@ Analysis:
   window is grouping nearby requests as intended.
 - The number of scheduler batches drops from 50 to 6 across the sweep, meaning
   the worker handles more requests per scheduling cycle under higher load.
-- Throughput stays roughly flat around 0.45-0.49 req/s because the old backend
-  still ran each prompt through a separate llama subprocess. The scheduler
-  batched requests, but model execution was still sequential inside the worker.
+- Throughput improves strongly from 6.54 req/s at concurrency 1 to 16.26 req/s
+  at concurrency 4, then flattens around 15-17 req/s. This is consistent with
+  the backend nearing its capacity while handling more concurrent work.
 - Latency rises with concurrency because each request waits behind more queued
-  generations. At concurrency 16, p95 latency reaches about 35.8s, showing the
-  cost of a single-worker, sequential subprocess backend under heavier
-  concurrent load.
-
-After switching to `llama-server`, rerun the sweep and compare against this
-baseline. The expected improvement is not necessarily a larger scheduler batch
-size; it is better throughput and/or latency because the backend can keep the
-model loaded and decode multiple active requests through continuous batching.
+  generations. At concurrency 16, p95 latency reaches about 1248.90 ms, showing
+  the throughput/latency tradeoff once the system is near saturation.
+- This run shows strong throughput with clean request success across the full
+  sweep, while keeping latency reasonable at lower to mid concurrency.
 
 ## Design Tradeoffs/Learnings
 
-- **llama-server backend vs CLI subprocesses:** `mini-v` delegates inference to a
-  long-running `llama-server` instead of launching one CLI subprocess per
-  request. This keeps the model loaded and lets llama.cpp handle continuous
-  batching internally.
+- **llama-server backend:** `mini-v` delegates inference to a long-running
+  `llama-server`, which keeps the model loaded and lets llama.cpp handle
+  continuous batching internally.
 - **Scheduler-level batching vs backend-level batching:** the scheduler groups
   requests that arrive close together, then fans them out concurrently to the
   backend. `mini-v` logs scheduler batch size, while `llama-server` owns actual
