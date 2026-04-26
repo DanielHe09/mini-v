@@ -1,0 +1,853 @@
+(2026-04-25 23:57:10) [INFO    ] Crow/1.2.1 server is running at http://0.0.0.0:18080 using 10 threads
+(2026-04-25 23:57:10) [INFO    ] Call `app.loglevel(crow::LogLevel::Warning)` to hide Info level logs.
+(2026-04-25 23:57:22) [INFO    ] Request: 127.0.0.1:54637 0x132808e18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=1-1 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=6269.629 model_start_ms=51.875 model_ms=6217.707 model_end_ms=6269.582 post_model_ms=0.047
+(2026-04-25 23:57:28) [INFO    ] Response: 0x132808e18 /generate 200 1
+(2026-04-25 23:57:28) [INFO    ] Request: 127.0.0.1:54653 0x122811818 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=2-2 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2575.759 model_start_ms=55.134 model_ms=2520.568 model_end_ms=2575.703 post_model_ms=0.056
+(2026-04-25 23:57:31) [INFO    ] Response: 0x122811818 /generate 200 1
+(2026-04-25 23:57:31) [INFO    ] Request: 127.0.0.1:54660 0x134011818 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=3-3 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2110.141 model_start_ms=52.569 model_ms=2057.520 model_end_ms=2110.089 post_model_ms=0.052
+(2026-04-25 23:57:33) [INFO    ] Response: 0x134011818 /generate 200 1
+(2026-04-25 23:57:33) [INFO    ] Request: 127.0.0.1:54665 0x11280c418 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=4-4 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2191.514 model_start_ms=55.131 model_ms=2136.344 model_end_ms=2191.475 post_model_ms=0.039
+(2026-04-25 23:57:35) [INFO    ] Response: 0x11280c418 /generate 200 1
+(2026-04-25 23:57:35) [INFO    ] Request: 127.0.0.1:54670 0x133808a18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=5-5 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=1909.913 model_start_ms=52.705 model_ms=1857.151 model_end_ms=1909.856 post_model_ms=0.056
+(2026-04-25 23:57:37) [INFO    ] Response: 0x133808a18 /generate 200 1
+(2026-04-25 23:57:37) [INFO    ] Request: 127.0.0.1:54676 0x13380a418 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=6-6 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2037.573 model_start_ms=50.501 model_ms=1987.016 model_end_ms=2037.517 post_model_ms=0.056
+(2026-04-25 23:57:39) [INFO    ] Response: 0x13380a418 /generate 200 1
+(2026-04-25 23:57:39) [INFO    ] Request: 127.0.0.1:54683 0x11280a018 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=7-7 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2253.762 model_start_ms=51.825 model_ms=2201.877 model_end_ms=2253.702 post_model_ms=0.060
+(2026-04-25 23:57:41) [INFO    ] Response: 0x11280a018 /generate 200 1
+(2026-04-25 23:57:41) [INFO    ] Request: 127.0.0.1:54688 0x12280ca18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=8-8 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2160.053 model_start_ms=50.562 model_ms=2109.418 model_end_ms=2159.980 post_model_ms=0.073
+(2026-04-25 23:57:43) [INFO    ] Response: 0x12280ca18 /generate 200 1
+(2026-04-25 23:57:43) [INFO    ] Request: 127.0.0.1:54695 0x13400d218 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=9-9 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2178.968 model_start_ms=53.199 model_ms=2125.665 model_end_ms=2178.864 post_model_ms=0.104
+(2026-04-25 23:57:45) [INFO    ] Response: 0x13400d218 /generate 200 1
+(2026-04-25 23:57:45) [INFO    ] Request: 127.0.0.1:54700 0x13400e618 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=10-10 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2254.766 model_start_ms=55.190 model_ms=2199.486 model_end_ms=2254.676 post_model_ms=0.091
+(2026-04-25 23:57:48) [INFO    ] Response: 0x13400e618 /generate 200 1
+(2026-04-25 23:57:48) [INFO    ] Request: 127.0.0.1:54707 0x12280ca18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=11-11 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2205.573 model_start_ms=55.181 model_ms=2150.357 model_end_ms=2205.537 post_model_ms=0.036
+(2026-04-25 23:57:50) [INFO    ] Response: 0x12280ca18 /generate 200 1
+(2026-04-25 23:57:50) [INFO    ] Request: 127.0.0.1:54714 0x11380ae18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=12-12 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2166.896 model_start_ms=55.142 model_ms=2111.693 model_end_ms=2166.835 post_model_ms=0.061
+(2026-04-25 23:57:52) [INFO    ] Response: 0x11380ae18 /generate 200 1
+(2026-04-25 23:57:52) [INFO    ] Request: 127.0.0.1:54719 0x12280ca18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=13-13 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2152.692 model_start_ms=52.849 model_ms=2099.790 model_end_ms=2152.639 post_model_ms=0.053
+(2026-04-25 23:57:54) [INFO    ] Response: 0x12280ca18 /generate 200 1
+(2026-04-25 23:57:54) [INFO    ] Request: 127.0.0.1:54726 0x132808e18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=14-14 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2132.386 model_start_ms=55.115 model_ms=2077.210 model_end_ms=2132.326 post_model_ms=0.060
+(2026-04-25 23:57:56) [INFO    ] Response: 0x132808e18 /generate 200 1
+(2026-04-25 23:57:56) [INFO    ] Request: 127.0.0.1:54732 0x12280ca18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=15-15 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2064.255 model_start_ms=55.204 model_ms=2008.991 model_end_ms=2064.195 post_model_ms=0.060
+(2026-04-25 23:57:58) [INFO    ] Response: 0x12280ca18 /generate 200 1
+(2026-04-25 23:57:58) [INFO    ] Request: 127.0.0.1:54738 0x12280de18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=16-16 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2068.681 model_start_ms=54.632 model_ms=2013.988 model_end_ms=2068.621 post_model_ms=0.060
+(2026-04-25 23:58:00) [INFO    ] Response: 0x12280de18 /generate 200 1
+(2026-04-25 23:58:00) [INFO    ] Request: 127.0.0.1:54745 0x13400e218 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=17-17 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2071.597 model_start_ms=55.156 model_ms=2016.370 model_end_ms=2071.526 post_model_ms=0.071
+(2026-04-25 23:58:02) [INFO    ] Response: 0x13400e218 /generate 200 1
+(2026-04-25 23:58:02) [INFO    ] Request: 127.0.0.1:54750 0x113809a18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=18-18 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2014.136 model_start_ms=54.282 model_ms=1959.812 model_end_ms=2014.094 post_model_ms=0.042
+(2026-04-25 23:58:04) [INFO    ] Response: 0x113809a18 /generate 200 1
+(2026-04-25 23:58:05) [INFO    ] Request: 127.0.0.1:54755 0x113808218 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=19-19 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2206.394 model_start_ms=72.314 model_ms=2134.016 model_end_ms=2206.330 post_model_ms=0.064
+(2026-04-25 23:58:07) [INFO    ] Response: 0x113808218 /generate 200 1
+(2026-04-25 23:58:07) [INFO    ] Request: 127.0.0.1:54761 0x113809a18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=20-20 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2166.251 model_start_ms=54.933 model_ms=2111.262 model_end_ms=2166.195 post_model_ms=0.056
+(2026-04-25 23:58:09) [INFO    ] Response: 0x113809a18 /generate 200 1
+(2026-04-25 23:58:09) [INFO    ] Request: 127.0.0.1:54766 0x13400ca18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=21-21 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2208.820 model_start_ms=55.126 model_ms=2153.635 model_end_ms=2208.761 post_model_ms=0.059
+(2026-04-25 23:58:11) [INFO    ] Response: 0x13400ca18 /generate 200 1
+(2026-04-25 23:58:11) [INFO    ] Request: 127.0.0.1:54773 0x12280de18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=22-22 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2165.683 model_start_ms=50.736 model_ms=2114.896 model_end_ms=2165.631 post_model_ms=0.052
+(2026-04-25 23:58:13) [INFO    ] Response: 0x12280de18 /generate 200 1
+(2026-04-25 23:58:13) [INFO    ] Request: 127.0.0.1:54780 0x133809218 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=23-23 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2187.440 model_start_ms=52.471 model_ms=2134.897 model_end_ms=2187.368 post_model_ms=0.072
+(2026-04-25 23:58:15) [INFO    ] Response: 0x133809218 /generate 200 1
+(2026-04-25 23:58:15) [INFO    ] Request: 127.0.0.1:54785 0x113809a18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=24-24 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2195.288 model_start_ms=55.138 model_ms=2140.086 model_end_ms=2195.224 post_model_ms=0.063
+(2026-04-25 23:58:18) [INFO    ] Response: 0x113809a18 /generate 200 1
+(2026-04-25 23:58:18) [INFO    ] Request: 127.0.0.1:54792 0x12280ca18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=25-25 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2113.290 model_start_ms=55.210 model_ms=2058.037 model_end_ms=2113.247 post_model_ms=0.043
+(2026-04-25 23:58:20) [INFO    ] Response: 0x12280ca18 /generate 200 1
+(2026-04-25 23:58:20) [INFO    ] Request: 127.0.0.1:54798 0x113809a18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=26-26 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2176.013 model_start_ms=55.164 model_ms=2120.761 model_end_ms=2175.925 post_model_ms=0.089
+(2026-04-25 23:58:22) [INFO    ] Response: 0x113809a18 /generate 200 1
+(2026-04-25 23:58:22) [INFO    ] Request: 127.0.0.1:54804 0x11380ae18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=27-27 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2121.446 model_start_ms=55.184 model_ms=2066.214 model_end_ms=2121.397 post_model_ms=0.049
+(2026-04-25 23:58:24) [INFO    ] Response: 0x11380ae18 /generate 200 1
+(2026-04-25 23:58:24) [INFO    ] Request: 127.0.0.1:54810 0x13400ca18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=28-28 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2206.285 model_start_ms=55.875 model_ms=2150.347 model_end_ms=2206.222 post_model_ms=0.063
+(2026-04-25 23:58:26) [INFO    ] Response: 0x13400ca18 /generate 200 1
+(2026-04-25 23:58:26) [INFO    ] Request: 127.0.0.1:54816 0x12280ca18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=29-29 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2082.032 model_start_ms=55.134 model_ms=2026.838 model_end_ms=2081.972 post_model_ms=0.060
+(2026-04-25 23:58:28) [INFO    ] Response: 0x12280ca18 /generate 200 1
+(2026-04-25 23:58:28) [INFO    ] Request: 127.0.0.1:54821 0x13280b218 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=30-30 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2264.834 model_start_ms=50.187 model_ms=2214.588 model_end_ms=2264.775 post_model_ms=0.060
+(2026-04-25 23:58:31) [INFO    ] Response: 0x13280b218 /generate 200 1
+(2026-04-25 23:58:31) [INFO    ] Request: 127.0.0.1:54827 0x11280a818 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=31-31 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2093.709 model_start_ms=53.399 model_ms=2040.255 model_end_ms=2093.654 post_model_ms=0.055
+(2026-04-25 23:58:33) [INFO    ] Response: 0x11280a818 /generate 200 1
+(2026-04-25 23:58:33) [INFO    ] Request: 127.0.0.1:54832 0x12280ca18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=32-32 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2248.773 model_start_ms=53.484 model_ms=2195.234 model_end_ms=2248.718 post_model_ms=0.055
+(2026-04-25 23:58:35) [INFO    ] Response: 0x12280ca18 /generate 200 1
+(2026-04-25 23:58:35) [INFO    ] Request: 127.0.0.1:54839 0x13400ca18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=33-33 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2120.835 model_start_ms=50.436 model_ms=2070.356 model_end_ms=2120.793 post_model_ms=0.042
+(2026-04-25 23:58:37) [INFO    ] Response: 0x13400ca18 /generate 200 1
+(2026-04-25 23:58:37) [INFO    ] Request: 127.0.0.1:54845 0x113808218 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=34-34 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2082.177 model_start_ms=54.612 model_ms=2027.504 model_end_ms=2082.116 post_model_ms=0.061
+(2026-04-25 23:58:39) [INFO    ] Response: 0x113808218 /generate 200 1
+(2026-04-25 23:58:39) [INFO    ] Request: 127.0.0.1:54853 0x13280b218 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=35-35 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2078.231 model_start_ms=55.284 model_ms=2022.906 model_end_ms=2078.191 post_model_ms=0.041
+(2026-04-25 23:58:41) [INFO    ] Response: 0x13280b218 /generate 200 1
+(2026-04-25 23:58:41) [INFO    ] Request: 127.0.0.1:54858 0x113808218 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=36-36 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2108.635 model_start_ms=55.287 model_ms=2053.307 model_end_ms=2108.594 post_model_ms=0.041
+(2026-04-25 23:58:43) [INFO    ] Response: 0x113808218 /generate 200 1
+(2026-04-25 23:58:43) [INFO    ] Request: 127.0.0.1:54865 0x12280ca18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=37-37 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2071.215 model_start_ms=53.077 model_ms=2018.068 model_end_ms=2071.144 post_model_ms=0.071
+(2026-04-25 23:58:45) [INFO    ] Response: 0x12280ca18 /generate 200 1
+(2026-04-25 23:58:45) [INFO    ] Request: 127.0.0.1:54870 0x13280b218 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=38-38 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2107.131 model_start_ms=55.150 model_ms=2051.923 model_end_ms=2107.073 post_model_ms=0.058
+(2026-04-25 23:58:48) [INFO    ] Response: 0x13280b218 /generate 200 1
+(2026-04-25 23:58:48) [INFO    ] Request: 127.0.0.1:54877 0x12280ca18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=39-39 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=1995.212 model_start_ms=55.153 model_ms=1940.013 model_end_ms=1995.166 post_model_ms=0.046
+(2026-04-25 23:58:50) [INFO    ] Response: 0x12280ca18 /generate 200 1
+(2026-04-25 23:58:50) [INFO    ] Request: 127.0.0.1:54882 0x12280de18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=40-40 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2055.978 model_start_ms=55.118 model_ms=2000.800 model_end_ms=2055.918 post_model_ms=0.060
+(2026-04-25 23:58:52) [INFO    ] Response: 0x12280de18 /generate 200 1
+(2026-04-25 23:58:52) [INFO    ] Request: 127.0.0.1:54887 0x113808218 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=41-41 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2053.575 model_start_ms=55.199 model_ms=1998.308 model_end_ms=2053.506 post_model_ms=0.069
+(2026-04-25 23:58:54) [INFO    ] Response: 0x113808218 /generate 200 1
+(2026-04-25 23:58:54) [INFO    ] Request: 127.0.0.1:54893 0x13400ca18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=42-42 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=1999.479 model_start_ms=54.962 model_ms=1944.450 model_end_ms=1999.412 post_model_ms=0.067
+(2026-04-25 23:58:56) [INFO    ] Response: 0x13400ca18 /generate 200 1
+(2026-04-25 23:58:56) [INFO    ] Request: 127.0.0.1:54898 0x13400de18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=43-43 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2089.015 model_start_ms=54.998 model_ms=2033.972 model_end_ms=2088.970 post_model_ms=0.045
+(2026-04-25 23:58:58) [INFO    ] Response: 0x13400de18 /generate 200 1
+(2026-04-25 23:58:58) [INFO    ] Request: 127.0.0.1:54903 0x13280b218 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=44-44 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2085.516 model_start_ms=55.135 model_ms=2030.319 model_end_ms=2085.454 post_model_ms=0.061
+(2026-04-25 23:59:00) [INFO    ] Response: 0x13280b218 /generate 200 1
+(2026-04-25 23:59:00) [INFO    ] Request: 127.0.0.1:54910 0x13400de18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=45-45 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2202.961 model_start_ms=51.005 model_ms=2151.886 model_end_ms=2202.890 post_model_ms=0.071
+(2026-04-25 23:59:02) [INFO    ] Response: 0x13400de18 /generate 200 1
+(2026-04-25 23:59:02) [INFO    ] Request: 127.0.0.1:54915 0x12280ca18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=46-46 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2073.525 model_start_ms=50.617 model_ms=2022.847 model_end_ms=2073.464 post_model_ms=0.061
+(2026-04-25 23:59:04) [INFO    ] Response: 0x12280ca18 /generate 200 1
+(2026-04-25 23:59:04) [INFO    ] Request: 127.0.0.1:54920 0x133808a18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=47-47 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2114.507 model_start_ms=55.135 model_ms=2059.317 model_end_ms=2114.452 post_model_ms=0.056
+(2026-04-25 23:59:06) [INFO    ] Response: 0x133808a18 /generate 200 1
+(2026-04-25 23:59:06) [INFO    ] Request: 127.0.0.1:54926 0x12280ca18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=48-48 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2141.043 model_start_ms=55.204 model_ms=2085.770 model_end_ms=2140.974 post_model_ms=0.069
+(2026-04-25 23:59:08) [INFO    ] Response: 0x12280ca18 /generate 200 1
+(2026-04-25 23:59:08) [INFO    ] Request: 127.0.0.1:54933 0x12280e418 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=49-49 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2013.553 model_start_ms=51.999 model_ms=1961.497 model_end_ms=2013.496 post_model_ms=0.057
+(2026-04-25 23:59:10) [INFO    ] Response: 0x12280e418 /generate 200 1
+(2026-04-25 23:59:10) [INFO    ] Request: 127.0.0.1:54939 0x113808218 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=50-50 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=1973.365 model_start_ms=55.150 model_ms=1918.122 model_end_ms=1973.272 post_model_ms=0.093
+(2026-04-25 23:59:12) [INFO    ] Response: 0x113808218 /generate 200 1
+(2026-04-25 23:59:12) [INFO    ] Request: 127.0.0.1:54946 0x113808218 HTTP/1.1 POST /generate
+(2026-04-25 23:59:12) [INFO    ] Request: 127.0.0.1:54945 0x113809c18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=2 request_id_range=51-52 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2067.952 model_start_ms=55.119 model_ms=2012.776 model_end_ms=2067.894 post_model_ms=0.057
+(2026-04-25 23:59:14) [INFO    ] Response: 0x113808218 /generate 200 1
+(2026-04-25 23:59:14) [INFO    ] Request: 127.0.0.1:54951 0x11380b018 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=4045.864 model_start_ms=2067.898 model_ms=1977.916 model_end_ms=4045.814 post_model_ms=0.050
+(2026-04-25 23:59:16) [INFO    ] Response: 0x113809c18 /generate 200 1
+(2026-04-25 23:59:16) [INFO    ] Request: 127.0.0.1:54956 0x113808218 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=2 request_id_range=53-54 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=3961.392 model_start_ms=2027.485 model_ms=1933.856 model_end_ms=3961.342 post_model_ms=0.051
+(2026-04-25 23:59:18) [INFO    ] Response: 0x11380b018 /generate 200 1
+(2026-04-25 23:59:18) [INFO    ] Request: 127.0.0.1:54963 0x113809c18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=4015.457 model_start_ms=1983.420 model_ms=2031.988 model_end_ms=4015.408 post_model_ms=0.049
+(2026-04-25 23:59:20) [INFO    ] Response: 0x113808218 /generate 200 1
+(2026-04-25 23:59:20) [INFO    ] Request: 127.0.0.1:54968 0x12280e418 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=2 request_id_range=55-56 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=4109.771 model_start_ms=2085.559 model_ms=2024.161 model_end_ms=4109.720 post_model_ms=0.051
+(2026-04-25 23:59:23) [INFO    ] Response: 0x113809c18 /generate 200 1
+(2026-04-25 23:59:23) [INFO    ] Request: 127.0.0.1:54973 0x12280ca18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=4038.763 model_start_ms=2077.802 model_ms=1960.905 model_end_ms=4038.707 post_model_ms=0.056
+(2026-04-25 23:59:25) [INFO    ] Response: 0x12280e418 /generate 200 1
+(2026-04-25 23:59:25) [INFO    ] Request: 127.0.0.1:54979 0x122810a18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=2 request_id_range=57-58 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=4158.129 model_start_ms=2014.222 model_ms=2143.871 model_end_ms=4158.093 post_model_ms=0.036
+(2026-04-25 23:59:27) [INFO    ] Response: 0x12280ca18 /generate 200 1
+(2026-04-25 23:59:27) [INFO    ] Request: 127.0.0.1:54984 0x12280e418 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=4264.180 model_start_ms=2197.787 model_ms=2066.351 model_end_ms=4264.137 post_model_ms=0.043
+(2026-04-25 23:59:29) [INFO    ] Response: 0x122810a18 /generate 200 1
+(2026-04-25 23:59:29) [INFO    ] Request: 127.0.0.1:54990 0x132808e18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=2 request_id_range=59-60 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=4150.433 model_start_ms=2120.449 model_ms=2029.946 model_end_ms=4150.395 post_model_ms=0.039
+(2026-04-25 23:59:31) [INFO    ] Response: 0x12280e418 /generate 200 1
+(2026-04-25 23:59:31) [INFO    ] Request: 127.0.0.1:54996 0x113808218 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=4115.568 model_start_ms=2083.949 model_ms=2031.579 model_end_ms=4115.528 post_model_ms=0.039
+(2026-04-25 23:59:33) [INFO    ] Response: 0x132808e18 /generate 200 1
+(2026-04-25 23:59:33) [INFO    ] Request: 127.0.0.1:55001 0x113809618 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=2 request_id_range=61-62 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=4171.934 model_start_ms=2082.637 model_ms=2089.253 model_end_ms=4171.889 post_model_ms=0.045
+(2026-04-25 23:59:35) [INFO    ] Response: 0x113808218 /generate 200 1
+(2026-04-25 23:59:35) [INFO    ] Request: 127.0.0.1:55006 0x11380c618 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=4139.043 model_start_ms=2140.017 model_ms=1998.965 model_end_ms=4138.981 post_model_ms=0.062
+(2026-04-25 23:59:37) [INFO    ] Response: 0x113809618 /generate 200 1
+(2026-04-25 23:59:37) [INFO    ] Request: 127.0.0.1:55012 0x133809818 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=2 request_id_range=63-64 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=4016.594 model_start_ms=2052.729 model_ms=1963.830 model_end_ms=4016.559 post_model_ms=0.035
+(2026-04-25 23:59:39) [INFO    ] Response: 0x11380c618 /generate 200 1
+(2026-04-25 23:59:39) [INFO    ] Request: 127.0.0.1:55017 0x122813818 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=4109.654 model_start_ms=2017.603 model_ms=2091.994 model_end_ms=4109.596 post_model_ms=0.058
+(2026-04-25 23:59:41) [INFO    ] Response: 0x133809818 /generate 200 1
+(2026-04-25 23:59:41) [INFO    ] Request: 127.0.0.1:55022 0x11280a018 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=2 request_id_range=65-66 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=4086.440 model_start_ms=2145.791 model_ms=1940.606 model_end_ms=4086.396 post_model_ms=0.044
+(2026-04-25 23:59:43) [INFO    ] Response: 0x122813818 /generate 200 1
+(2026-04-25 23:59:43) [INFO    ] Request: 127.0.0.1:55028 0x11280b418 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=3944.981 model_start_ms=1994.059 model_ms=1950.865 model_end_ms=3944.924 post_model_ms=0.057
+(2026-04-25 23:59:45) [INFO    ] Response: 0x11280a018 /generate 200 1
+(2026-04-25 23:59:45) [INFO    ] Request: 127.0.0.1:55035 0x134017018 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=2 request_id_range=67-68 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=3886.547 model_start_ms=2001.012 model_ms=1885.482 model_end_ms=3886.494 post_model_ms=0.053
+(2026-04-25 23:59:47) [INFO    ] Response: 0x11280b418 /generate 200 1
+(2026-04-25 23:59:47) [INFO    ] Request: 127.0.0.1:55040 0x11380a018 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=3863.075 model_start_ms=1935.751 model_ms=1927.275 model_end_ms=3863.026 post_model_ms=0.049
+(2026-04-25 23:59:49) [INFO    ] Response: 0x134017018 /generate 200 1
+(2026-04-25 23:59:49) [INFO    ] Request: 127.0.0.1:55046 0x113808218 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=2 request_id_range=69-70 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=4129.543 model_start_ms=1981.034 model_ms=2148.457 model_end_ms=4129.491 post_model_ms=0.052
+(2026-04-25 23:59:51) [INFO    ] Response: 0x11380a018 /generate 200 1
+(2026-04-25 23:59:51) [INFO    ] Request: 127.0.0.1:55051 0x11380b418 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=4185.122 model_start_ms=2202.240 model_ms=1982.829 model_end_ms=4185.069 post_model_ms=0.053
+(2026-04-25 23:59:53) [INFO    ] Response: 0x113808218 /generate 200 1
+(2026-04-25 23:59:53) [INFO    ] Request: 127.0.0.1:55056 0x132808e18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=2 request_id_range=71-72 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=4067.414 model_start_ms=2034.495 model_ms=2032.866 model_end_ms=4067.361 post_model_ms=0.054
+(2026-04-25 23:59:55) [INFO    ] Response: 0x11380b418 /generate 200 1
+(2026-04-25 23:59:55) [INFO    ] Request: 127.0.0.1:55062 0x12280fa18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=4261.852 model_start_ms=2084.724 model_ms=2177.077 model_end_ms=4261.801 post_model_ms=0.052
+(2026-04-25 23:59:57) [INFO    ] Response: 0x132808e18 /generate 200 1
+(2026-04-25 23:59:57) [INFO    ] Request: 127.0.0.1:55068 0x12280d218 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=2 request_id_range=73-74 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=4363.784 model_start_ms=2226.552 model_ms=2137.165 model_end_ms=4363.717 post_model_ms=0.067
+(2026-04-26 00:00:00) [INFO    ] Response: 0x12280fa18 /generate 200 1
+(2026-04-26 00:00:00) [INFO    ] Request: 127.0.0.1:55078 0x12280e618 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=4307.386 model_start_ms=2187.303 model_ms=2120.026 model_end_ms=4307.330 post_model_ms=0.057
+(2026-04-26 00:00:02) [INFO    ] Response: 0x12280d218 /generate 200 1
+(2026-04-26 00:00:02) [INFO    ] Request: 127.0.0.1:55086 0x132808e18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=2 request_id_range=75-76 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=4217.192 model_start_ms=2173.807 model_ms=2043.324 model_end_ms=4217.131 post_model_ms=0.061
+(2026-04-26 00:00:04) [INFO    ] Response: 0x12280e618 /generate 200 1
+(2026-04-26 00:00:04) [INFO    ] Request: 127.0.0.1:55091 0x113808218 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=4357.194 model_start_ms=2096.989 model_ms=2260.166 model_end_ms=4357.155 post_model_ms=0.039
+(2026-04-26 00:00:06) [INFO    ] Response: 0x132808e18 /generate 200 1
+(2026-04-26 00:00:06) [INFO    ] Request: 127.0.0.1:55100 0x134019618 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=2 request_id_range=77-78 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=4400.642 model_start_ms=2313.613 model_ms=2086.975 model_end_ms=4400.588 post_model_ms=0.054
+(2026-04-26 00:00:08) [INFO    ] Response: 0x113808218 /generate 200 1
+(2026-04-26 00:00:08) [INFO    ] Request: 127.0.0.1:55105 0x132808e18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=4110.396 model_start_ms=2141.108 model_ms=1969.256 model_end_ms=4110.364 post_model_ms=0.032
+(2026-04-26 00:00:10) [INFO    ] Response: 0x134019618 /generate 200 1
+(2026-04-26 00:00:10) [INFO    ] Request: 127.0.0.1:55111 0x12280ca18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=2 request_id_range=79-80 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=3981.730 model_start_ms=2021.405 model_ms=1960.289 model_end_ms=3981.694 post_model_ms=0.036
+(2026-04-26 00:00:12) [INFO    ] Response: 0x132808e18 /generate 200 1
+(2026-04-26 00:00:12) [INFO    ] Request: 127.0.0.1:55118 0x11280c418 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=4114.912 model_start_ms=2013.111 model_ms=2101.583 model_end_ms=4114.695 post_model_ms=0.218
+(2026-04-26 00:00:14) [INFO    ] Response: 0x12280ca18 /generate 200 1
+(2026-04-26 00:00:14) [INFO    ] Request: 127.0.0.1:55123 0x134019618 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=2 request_id_range=81-82 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=4057.950 model_start_ms=2150.888 model_ms=1907.011 model_end_ms=4057.898 post_model_ms=0.052
+(2026-04-26 00:00:16) [INFO    ] Response: 0x11280c418 /generate 200 1
+(2026-04-26 00:00:16) [INFO    ] Request: 127.0.0.1:55128 0x12280ca18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=3884.175 model_start_ms=1955.393 model_ms=1928.726 model_end_ms=3884.118 post_model_ms=0.057
+(2026-04-26 00:00:18) [INFO    ] Response: 0x134019618 /generate 200 1
+(2026-04-26 00:00:18) [INFO    ] Request: 127.0.0.1:55133 0x13400d618 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=2 request_id_range=83-84 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=4037.743 model_start_ms=1982.434 model_ms=2055.255 model_end_ms=4037.690 post_model_ms=0.054
+(2026-04-26 00:00:20) [INFO    ] Response: 0x12280ca18 /generate 200 1
+(2026-04-26 00:00:20) [INFO    ] Request: 127.0.0.1:55141 0x11380a618 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=4146.824 model_start_ms=2108.904 model_ms=2037.871 model_end_ms=4146.775 post_model_ms=0.049
+(2026-04-26 00:00:22) [INFO    ] Response: 0x13400d618 /generate 200 1
+(2026-04-26 00:00:22) [INFO    ] Request: 127.0.0.1:55152 0x113808218 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=2 request_id_range=85-86 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=4023.079 model_start_ms=2086.564 model_ms=1936.443 model_end_ms=4023.006 post_model_ms=0.073
+(2026-04-26 00:00:24) [INFO    ] Response: 0x11380a618 /generate 200 1
+(2026-04-26 00:00:24) [INFO    ] Request: 127.0.0.1:55160 0x11380ba18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=3950.019 model_start_ms=1985.565 model_ms=1964.413 model_end_ms=3949.977 post_model_ms=0.041
+(2026-04-26 00:00:26) [INFO    ] Response: 0x113808218 /generate 200 1
+(2026-04-26 00:00:26) [INFO    ] Request: 127.0.0.1:55164 0x12280ca18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=2 request_id_range=87-88 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=4809.212 model_start_ms=2014.434 model_ms=2794.726 model_end_ms=4809.161 post_model_ms=0.051
+(2026-04-26 00:00:29) [INFO    ] Response: 0x11380ba18 /generate 200 1
+(2026-04-26 00:00:29) [INFO    ] Request: 127.0.0.1:55177 0x12280de18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=4985.430 model_start_ms=2845.280 model_ms=2140.103 model_end_ms=4985.383 post_model_ms=0.046
+(2026-04-26 00:00:31) [INFO    ] Response: 0x12280ca18 /generate 200 1
+(2026-04-26 00:00:31) [INFO    ] Request: 127.0.0.1:55183 0x112808218 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=2 request_id_range=89-90 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=4564.260 model_start_ms=2193.903 model_ms=2370.311 model_end_ms=4564.215 post_model_ms=0.046
+(2026-04-26 00:00:34) [INFO    ] Response: 0x12280de18 /generate 200 1
+(2026-04-26 00:00:34) [INFO    ] Request: 127.0.0.1:55191 0x133809218 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=4443.260 model_start_ms=2424.331 model_ms=2018.874 model_end_ms=4443.205 post_model_ms=0.055
+(2026-04-26 00:00:36) [INFO    ] Response: 0x112808218 /generate 200 1
+(2026-04-26 00:00:36) [INFO    ] Request: 127.0.0.1:55197 0x11380cc18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=2 request_id_range=91-92 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=4188.741 model_start_ms=2072.286 model_ms=2116.409 model_end_ms=4188.695 post_model_ms=0.046
+(2026-04-26 00:00:38) [INFO    ] Response: 0x133809218 /generate 200 1
+(2026-04-26 00:00:38) [INFO    ] Request: 127.0.0.1:55202 0x11380e018 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=4254.657 model_start_ms=2169.714 model_ms=2084.894 model_end_ms=4254.608 post_model_ms=0.049
+(2026-04-26 00:00:40) [INFO    ] Response: 0x11380cc18 /generate 200 1
+(2026-04-26 00:00:40) [INFO    ] Request: 127.0.0.1:55207 0x113808e18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=2 request_id_range=93-94 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=4212.405 model_start_ms=2138.657 model_ms=2073.678 model_end_ms=4212.335 post_model_ms=0.070
+(2026-04-26 00:00:42) [INFO    ] Response: 0x11380e018 /generate 200 1
+(2026-04-26 00:00:42) [INFO    ] Request: 127.0.0.1:55215 0x12280d618 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=4208.412 model_start_ms=2127.088 model_ms=2081.274 model_end_ms=4208.362 post_model_ms=0.050
+(2026-04-26 00:00:44) [INFO    ] Response: 0x113808e18 /generate 200 1
+(2026-04-26 00:00:44) [INFO    ] Request: 127.0.0.1:55220 0x13400ca18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=2 request_id_range=95-96 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=4215.765 model_start_ms=2133.411 model_ms=2082.296 model_end_ms=4215.707 post_model_ms=0.058
+(2026-04-26 00:00:46) [INFO    ] Response: 0x12280d618 /generate 200 1
+(2026-04-26 00:00:46) [INFO    ] Request: 127.0.0.1:55230 0x113808e18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=4093.844 model_start_ms=2136.104 model_ms=1957.687 model_end_ms=4093.791 post_model_ms=0.053
+(2026-04-26 00:00:48) [INFO    ] Response: 0x13400ca18 /generate 200 1
+(2026-04-26 00:00:48) [INFO    ] Request: 127.0.0.1:55237 0x11380a218 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=2 request_id_range=97-98 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=4096.486 model_start_ms=2006.903 model_ms=2089.530 model_end_ms=4096.433 post_model_ms=0.053
+(2026-04-26 00:00:50) [INFO    ] Response: 0x113808e18 /generate 200 1
+(2026-04-26 00:00:50) [INFO    ] Request: 127.0.0.1:55242 0x11380b618 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=4210.609 model_start_ms=2138.883 model_ms=2071.678 model_end_ms=4210.561 post_model_ms=0.048
+(2026-04-26 00:00:52) [INFO    ] Response: 0x11380a218 /generate 200 1
+(2026-04-26 00:00:52) [INFO    ] Request: 127.0.0.1:55247 0x13400ca18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=2 request_id_range=99-100 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=4069.763 model_start_ms=2122.900 model_ms=1946.814 model_end_ms=4069.714 post_model_ms=0.050
+(2026-04-26 00:00:54) [INFO    ] Response: 0x11380b618 /generate 200 1
+[mini-v] POST /generate status=200 total_ms=3935.401 model_start_ms=1998.040 model_ms=1937.308 model_end_ms=3935.348 post_model_ms=0.053
+(2026-04-26 00:00:56) [INFO    ] Response: 0x13400ca18 /generate 200 1
+(2026-04-26 00:00:56) [INFO    ] Request: 127.0.0.1:55257 0x112808218 HTTP/1.1 POST /generate
+(2026-04-26 00:00:56) [INFO    ] Request: 127.0.0.1:55256 0x133809818 HTTP/1.1 POST /generate
+(2026-04-26 00:00:56) [INFO    ] Request: 127.0.0.1:55258 0x11380a218 HTTP/1.1 POST /generate
+(2026-04-26 00:00:56) [INFO    ] Request: 127.0.0.1:55259 0x11280f018 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=4 request_id_range=101-104 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2124.315 model_start_ms=55.161 model_ms=2069.098 model_end_ms=2124.260 post_model_ms=0.056
+(2026-04-26 00:00:59) [INFO    ] Response: 0x112808218 /generate 200 1
+(2026-04-26 00:00:59) [INFO    ] Request: 127.0.0.1:55264 0x13380ac18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=4228.162 model_start_ms=2124.187 model_ms=2103.918 model_end_ms=4228.105 post_model_ms=0.056
+(2026-04-26 00:01:01) [INFO    ] Response: 0x133809818 /generate 200 1
+(2026-04-26 00:01:01) [INFO    ] Request: 127.0.0.1:55270 0x12280d618 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=6287.862 model_start_ms=4228.077 model_ms=2059.735 model_end_ms=6287.812 post_model_ms=0.050
+(2026-04-26 00:01:03) [INFO    ] Response: 0x11380a218 /generate 200 1
+(2026-04-26 00:01:03) [INFO    ] Request: 127.0.0.1:55276 0x122810418 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8289.849 model_start_ms=6287.802 model_ms=2001.988 model_end_ms=8289.791 post_model_ms=0.058
+(2026-04-26 00:01:05) [INFO    ] Response: 0x11280f018 /generate 200 1
+(2026-04-26 00:01:05) [INFO    ] Request: 127.0.0.1:55282 0x112810418 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=4 request_id_range=105-108 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=8284.431 model_start_ms=6219.006 model_ms=2065.368 model_end_ms=8284.374 post_model_ms=0.057
+(2026-04-26 00:01:07) [INFO    ] Response: 0x13380ac18 /generate 200 1
+(2026-04-26 00:01:07) [INFO    ] Request: 127.0.0.1:55289 0x11280f018 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8106.932 model_start_ms=6180.634 model_ms=1926.243 model_end_ms=8106.876 post_model_ms=0.056
+(2026-04-26 00:01:09) [INFO    ] Response: 0x12280d618 /generate 200 1
+(2026-04-26 00:01:09) [INFO    ] Request: 127.0.0.1:55293 0x11380a218 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8142.692 model_start_ms=6047.114 model_ms=2095.526 model_end_ms=8142.640 post_model_ms=0.051
+(2026-04-26 00:01:11) [INFO    ] Response: 0x122810418 /generate 200 1
+(2026-04-26 00:01:11) [INFO    ] Request: 127.0.0.1:55298 0x113808218 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8213.189 model_start_ms=6140.825 model_ms=2072.333 model_end_ms=8213.158 post_model_ms=0.031
+(2026-04-26 00:01:13) [INFO    ] Response: 0x112810418 /generate 200 1
+(2026-04-26 00:01:13) [INFO    ] Request: 127.0.0.1:55305 0x11380b618 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=4 request_id_range=109-112 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=8260.234 model_start_ms=6147.523 model_ms=2112.657 model_end_ms=8260.180 post_model_ms=0.054
+(2026-04-26 00:01:15) [INFO    ] Response: 0x11280f018 /generate 200 1
+(2026-04-26 00:01:15) [INFO    ] Request: 127.0.0.1:55310 0x11380ca18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8497.590 model_start_ms=6334.011 model_ms=2163.521 model_end_ms=8497.532 post_model_ms=0.058
+(2026-04-26 00:01:17) [INFO    ] Response: 0x11380a218 /generate 200 1
+(2026-04-26 00:01:17) [INFO    ] Request: 127.0.0.1:55316 0x13400ea18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8575.048 model_start_ms=6402.148 model_ms=2172.856 model_end_ms=8575.004 post_model_ms=0.044
+(2026-04-26 00:01:19) [INFO    ] Response: 0x113808218 /generate 200 1
+(2026-04-26 00:01:19) [INFO    ] Request: 127.0.0.1:55322 0x122810418 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8504.054 model_start_ms=6502.807 model_ms=2001.198 model_end_ms=8504.005 post_model_ms=0.049
+(2026-04-26 00:01:21) [INFO    ] Response: 0x11380b618 /generate 200 1
+(2026-04-26 00:01:21) [INFO    ] Request: 127.0.0.1:55327 0x12280da18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=4 request_id_range=113-116 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=8413.378 model_start_ms=6391.188 model_ms=2022.133 model_end_ms=8413.322 post_model_ms=0.056
+(2026-04-26 00:01:24) [INFO    ] Response: 0x11380ca18 /generate 200 1
+(2026-04-26 00:01:24) [INFO    ] Request: 127.0.0.1:55333 0x122811818 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8159.612 model_start_ms=6249.724 model_ms=1909.827 model_end_ms=8159.551 post_model_ms=0.061
+(2026-04-26 00:01:25) [INFO    ] Response: 0x13400ea18 /generate 200 1
+(2026-04-26 00:01:25) [INFO    ] Request: 127.0.0.1:55338 0x112808218 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=7988.045 model_start_ms=5987.036 model_ms=2000.946 model_end_ms=7987.982 post_model_ms=0.063
+(2026-04-26 00:01:27) [INFO    ] Response: 0x122810418 /generate 200 1
+(2026-04-26 00:01:27) [INFO    ] Request: 127.0.0.1:55343 0x13400ea18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8067.779 model_start_ms=5986.483 model_ms=2081.247 model_end_ms=8067.730 post_model_ms=0.048
+(2026-04-26 00:01:30) [INFO    ] Response: 0x12280da18 /generate 200 1
+(2026-04-26 00:01:30) [INFO    ] Request: 127.0.0.1:55349 0x13400ca18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=4 request_id_range=117-120 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=8144.875 model_start_ms=6045.079 model_ms=2099.743 model_end_ms=8144.822 post_model_ms=0.053
+(2026-04-26 00:01:32) [INFO    ] Response: 0x122811818 /generate 200 1
+(2026-04-26 00:01:32) [INFO    ] Request: 127.0.0.1:55354 0x113808218 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8362.895 model_start_ms=6235.243 model_ms=2127.597 model_end_ms=8362.840 post_model_ms=0.055
+(2026-04-26 00:01:34) [INFO    ] Response: 0x112808218 /generate 200 1
+(2026-04-26 00:01:34) [INFO    ] Request: 127.0.0.1:55360 0x11380aa18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8422.488 model_start_ms=6361.687 model_ms=2060.748 model_end_ms=8422.435 post_model_ms=0.052
+(2026-04-26 00:01:36) [INFO    ] Response: 0x13400ea18 /generate 200 1
+(2026-04-26 00:01:36) [INFO    ] Request: 127.0.0.1:55368 0x11380be18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8274.189 model_start_ms=6341.305 model_ms=1932.837 model_end_ms=8274.142 post_model_ms=0.047
+(2026-04-26 00:01:38) [INFO    ] Response: 0x13400ca18 /generate 200 1
+(2026-04-26 00:01:38) [INFO    ] Request: 127.0.0.1:55373 0x122811818 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=4 request_id_range=121-124 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=8250.468 model_start_ms=6172.481 model_ms=2077.926 model_end_ms=8250.407 post_model_ms=0.061
+(2026-04-26 00:01:40) [INFO    ] Response: 0x113808218 /generate 200 1
+(2026-04-26 00:01:40) [INFO    ] Request: 127.0.0.1:55378 0x122812c18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8139.297 model_start_ms=6122.702 model_ms=2016.542 model_end_ms=8139.244 post_model_ms=0.054
+(2026-04-26 00:01:42) [INFO    ] Response: 0x11380aa18 /generate 200 1
+(2026-04-26 00:01:42) [INFO    ] Request: 127.0.0.1:55384 0x12280d018 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8047.835 model_start_ms=6078.721 model_ms=1969.061 model_end_ms=8047.782 post_model_ms=0.053
+(2026-04-26 00:01:44) [INFO    ] Response: 0x11380be18 /generate 200 1
+(2026-04-26 00:01:44) [INFO    ] Request: 127.0.0.1:55389 0x12280f418 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8032.551 model_start_ms=6114.594 model_ms=1917.903 model_end_ms=8032.497 post_model_ms=0.054
+(2026-04-26 00:01:46) [INFO    ] Response: 0x122811818 /generate 200 1
+(2026-04-26 00:01:46) [INFO    ] Request: 127.0.0.1:55393 0x122814018 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=4 request_id_range=125-128 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=8005.585 model_start_ms=5952.785 model_ms=2052.744 model_end_ms=8005.529 post_model_ms=0.056
+(2026-04-26 00:01:48) [INFO    ] Response: 0x122812c18 /generate 200 1
+(2026-04-26 00:01:48) [INFO    ] Request: 127.0.0.1:55401 0x11380be18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8054.101 model_start_ms=5988.803 model_ms=2065.245 model_end_ms=8054.048 post_model_ms=0.054
+(2026-04-26 00:01:50) [INFO    ] Response: 0x12280d018 /generate 200 1
+(2026-04-26 00:01:50) [INFO    ] Request: 127.0.0.1:55408 0x113808218 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8081.057 model_start_ms=6084.875 model_ms=1996.134 model_end_ms=8081.009 post_model_ms=0.048
+(2026-04-26 00:01:52) [INFO    ] Response: 0x12280f418 /generate 200 1
+(2026-04-26 00:01:52) [INFO    ] Request: 127.0.0.1:55413 0x113809618 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8102.942 model_start_ms=6163.079 model_ms=1939.811 model_end_ms=8102.891 post_model_ms=0.052
+(2026-04-26 00:01:54) [INFO    ] Response: 0x122814018 /generate 200 1
+(2026-04-26 00:01:54) [INFO    ] Request: 127.0.0.1:55417 0x11380d218 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=4 request_id_range=129-132 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=8024.049 model_start_ms=6052.886 model_ms=1971.118 model_end_ms=8024.004 post_model_ms=0.045
+(2026-04-26 00:01:56) [INFO    ] Response: 0x11380be18 /generate 200 1
+(2026-04-26 00:01:56) [INFO    ] Request: 127.0.0.1:55422 0x11380e618 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8000.046 model_start_ms=5958.596 model_ms=2041.403 model_end_ms=7999.998 post_model_ms=0.048
+(2026-04-26 00:01:58) [INFO    ] Response: 0x113808218 /generate 200 1
+(2026-04-26 00:01:58) [INFO    ] Request: 127.0.0.1:55428 0x122814018 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8046.952 model_start_ms=6004.044 model_ms=2042.864 model_end_ms=8046.908 post_model_ms=0.044
+(2026-04-26 00:02:00) [INFO    ] Response: 0x113809618 /generate 200 1
+(2026-04-26 00:02:00) [INFO    ] Request: 127.0.0.1:55434 0x12280f818 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8125.666 model_start_ms=6107.241 model_ms=2018.377 model_end_ms=8125.618 post_model_ms=0.048
+(2026-04-26 00:02:02) [INFO    ] Response: 0x11380d218 /generate 200 1
+(2026-04-26 00:02:02) [INFO    ] Request: 127.0.0.1:55439 0x12281d018 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=4 request_id_range=133-136 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=8273.153 model_start_ms=6154.729 model_ms=2118.373 model_end_ms=8273.103 post_model_ms=0.050
+(2026-04-26 00:02:04) [INFO    ] Response: 0x11380e618 /generate 200 1
+(2026-04-26 00:02:04) [INFO    ] Request: 127.0.0.1:55451 0x122815418 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8269.651 model_start_ms=6232.583 model_ms=2037.013 model_end_ms=8269.596 post_model_ms=0.055
+(2026-04-26 00:02:06) [INFO    ] Response: 0x122814018 /generate 200 1
+(2026-04-26 00:02:06) [INFO    ] Request: 127.0.0.1:55458 0x12280ca18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8227.445 model_start_ms=6227.166 model_ms=2000.215 model_end_ms=8227.381 post_model_ms=0.064
+(2026-04-26 00:02:08) [INFO    ] Response: 0x12280f818 /generate 200 1
+(2026-04-26 00:02:08) [INFO    ] Request: 127.0.0.1:55464 0x11380d218 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8265.754 model_start_ms=6208.518 model_ms=2057.190 model_end_ms=8265.708 post_model_ms=0.046
+(2026-04-26 00:02:10) [INFO    ] Response: 0x12281d018 /generate 200 1
+(2026-04-26 00:02:10) [INFO    ] Request: 127.0.0.1:55469 0x13280b218 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=4 request_id_range=137-140 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=8118.204 model_start_ms=6148.096 model_ms=1970.046 model_end_ms=8118.142 post_model_ms=0.063
+(2026-04-26 00:02:12) [INFO    ] Response: 0x122815418 /generate 200 1
+(2026-04-26 00:02:12) [INFO    ] Request: 127.0.0.1:55475 0x113808218 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8087.226 model_start_ms=6081.001 model_ms=2006.178 model_end_ms=8087.179 post_model_ms=0.048
+(2026-04-26 00:02:14) [INFO    ] Response: 0x12280ca18 /generate 200 1
+(2026-04-26 00:02:14) [INFO    ] Request: 127.0.0.1:55480 0x113809618 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8158.150 model_start_ms=6087.206 model_ms=2070.891 model_end_ms=8158.097 post_model_ms=0.053
+(2026-04-26 00:02:16) [INFO    ] Response: 0x11380d218 /generate 200 1
+(2026-04-26 00:02:16) [INFO    ] Request: 127.0.0.1:55485 0x11380b618 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8208.402 model_start_ms=6100.665 model_ms=2107.685 model_end_ms=8208.350 post_model_ms=0.052
+(2026-04-26 00:02:19) [INFO    ] Response: 0x13280b218 /generate 200 1
+(2026-04-26 00:02:19) [INFO    ] Request: 127.0.0.1:55491 0x112808218 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=4 request_id_range=141-144 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=8331.442 model_start_ms=6238.210 model_ms=2093.175 model_end_ms=8331.385 post_model_ms=0.057
+(2026-04-26 00:02:21) [INFO    ] Response: 0x113808218 /generate 200 1
+(2026-04-26 00:02:21) [INFO    ] Request: 127.0.0.1:55500 0x12280ca18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8468.008 model_start_ms=6325.443 model_ms=2142.506 model_end_ms=8467.949 post_model_ms=0.059
+(2026-04-26 00:02:23) [INFO    ] Response: 0x113809618 /generate 200 1
+(2026-04-26 00:02:23) [INFO    ] Request: 127.0.0.1:55505 0x11280ba18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8342.039 model_start_ms=6397.015 model_ms=1944.986 model_end_ms=8342.002 post_model_ms=0.037
+(2026-04-26 00:02:25) [INFO    ] Response: 0x11380b618 /generate 200 1
+(2026-04-26 00:02:25) [INFO    ] Request: 127.0.0.1:55511 0x12280de18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8173.434 model_start_ms=6234.381 model_ms=1938.999 model_end_ms=8173.380 post_model_ms=0.054
+(2026-04-26 00:02:27) [INFO    ] Response: 0x112808218 /generate 200 1
+(2026-04-26 00:02:27) [INFO    ] Request: 127.0.0.1:55516 0x112809618 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=4 request_id_range=145-148 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=8129.512 model_start_ms=6075.464 model_ms=2053.987 model_end_ms=8129.451 post_model_ms=0.061
+(2026-04-26 00:02:29) [INFO    ] Response: 0x12280ca18 /generate 200 1
+(2026-04-26 00:02:29) [INFO    ] Request: 127.0.0.1:55521 0x113808218 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8092.175 model_start_ms=5987.203 model_ms=2104.917 model_end_ms=8092.120 post_model_ms=0.055
+(2026-04-26 00:02:31) [INFO    ] Response: 0x11280ba18 /generate 200 1
+(2026-04-26 00:02:31) [INFO    ] Request: 127.0.0.1:55527 0x11380be18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8053.224 model_start_ms=6147.303 model_ms=1905.863 model_end_ms=8053.166 post_model_ms=0.058
+(2026-04-26 00:02:33) [INFO    ] Response: 0x12280de18 /generate 200 1
+[mini-v] POST /generate status=200 total_ms=8079.208 model_start_ms=6113.850 model_ms=1965.286 model_end_ms=8079.136 post_model_ms=0.072
+(2026-04-26 00:02:35) [INFO    ] Response: 0x112809618 /generate 200 1
+[mini-v] scheduler batch_size=2 request_id_range=149-150 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=7965.360 model_start_ms=6025.193 model_ms=1940.130 model_end_ms=7965.323 post_model_ms=0.037
+(2026-04-26 00:02:37) [INFO    ] Response: 0x113808218 /generate 200 1
+[mini-v] POST /generate status=200 total_ms=7840.769 model_start_ms=5860.242 model_ms=1980.476 model_end_ms=7840.718 post_model_ms=0.051
+(2026-04-26 00:02:39) [INFO    ] Response: 0x11380be18 /generate 200 1
+(2026-04-26 00:02:39) [INFO    ] Request: 127.0.0.1:55546 0x113809618 HTTP/1.1 POST /generate
+(2026-04-26 00:02:39) [INFO    ] Request: 127.0.0.1:55547 0x132808e18 HTTP/1.1 POST /generate
+(2026-04-26 00:02:39) [INFO    ] Request: 127.0.0.1:55548 0x13280e018 HTTP/1.1 POST /generate
+(2026-04-26 00:02:39) [INFO    ] Request: 127.0.0.1:55550 0x112808218 HTTP/1.1 POST /generate
+(2026-04-26 00:02:39) [INFO    ] Request: 127.0.0.1:55551 0x112809618 HTTP/1.1 POST /generate
+(2026-04-26 00:02:39) [INFO    ] Request: 127.0.0.1:55552 0x11280c418 HTTP/1.1 POST /generate
+(2026-04-26 00:02:39) [INFO    ] Request: 127.0.0.1:55549 0x133809218 HTTP/1.1 POST /generate
+(2026-04-26 00:02:39) [INFO    ] Request: 127.0.0.1:55553 0x13380a618 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=8 request_id_range=151-158 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=1994.057 model_start_ms=52.651 model_ms=1941.341 model_end_ms=1993.992 post_model_ms=0.065
+(2026-04-26 00:02:41) [INFO    ] Response: 0x113809618 /generate 200 1
+(2026-04-26 00:02:41) [INFO    ] Request: 127.0.0.1:55559 0x11380aa18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=4051.853 model_start_ms=1993.956 model_ms=2057.849 model_end_ms=4051.805 post_model_ms=0.047
+(2026-04-26 00:02:43) [INFO    ] Response: 0x132808e18 /generate 200 1
+(2026-04-26 00:02:43) [INFO    ] Request: 127.0.0.1:55566 0x12280f218 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=5994.193 model_start_ms=4051.438 model_ms=1942.703 model_end_ms=5994.142 post_model_ms=0.051
+(2026-04-26 00:02:45) [INFO    ] Response: 0x13280e018 /generate 200 1
+(2026-04-26 00:02:45) [INFO    ] Request: 127.0.0.1:55571 0x12280ca18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8019.479 model_start_ms=5993.943 model_ms=2025.486 model_end_ms=8019.429 post_model_ms=0.050
+(2026-04-26 00:02:47) [INFO    ] Response: 0x112808218 /generate 200 1
+(2026-04-26 00:02:47) [INFO    ] Request: 127.0.0.1:55576 0x11280aa18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=9901.295 model_start_ms=8019.287 model_ms=1881.958 model_end_ms=9901.245 post_model_ms=0.050
+(2026-04-26 00:02:49) [INFO    ] Response: 0x112809618 /generate 200 1
+[mini-v] POST /generate status=200 total_ms=11866.984 model_start_ms=9900.933 model_ms=1965.997 model_end_ms=11866.930 post_model_ms=0.055
+(2026-04-26 00:02:51) [INFO    ] Response: 0x11280c418 /generate 200 1
+(2026-04-26 00:02:51) [INFO    ] Request: 127.0.0.1:55586 0x13400fe18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=13882.224 model_start_ms=11866.919 model_ms=2015.249 model_end_ms=13882.168 post_model_ms=0.056
+(2026-04-26 00:02:53) [INFO    ] Response: 0x133809218 /generate 200 1
+(2026-04-26 00:02:53) [INFO    ] Request: 127.0.0.1:55581 0x13400ca18 HTTP/1.1 POST /generate
+(2026-04-26 00:02:53) [INFO    ] Request: 127.0.0.1:55591 0x113808818 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=16018.011 model_start_ms=13882.089 model_ms=2135.875 model_end_ms=16017.963 post_model_ms=0.047
+(2026-04-26 00:02:55) [INFO    ] Response: 0x13380a618 /generate 200 1
+(2026-04-26 00:02:55) [INFO    ] Request: 127.0.0.1:55597 0x13400de18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=8 request_id_range=159-166 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=16145.757 model_start_ms=14078.641 model_ms=2067.067 model_end_ms=16145.708 post_model_ms=0.050
+(2026-04-26 00:02:57) [INFO    ] Response: 0x11380aa18 /generate 200 1
+(2026-04-26 00:02:57) [INFO    ] Request: 127.0.0.1:55604 0x12280de18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=16233.490 model_start_ms=14087.852 model_ms=2145.591 model_end_ms=16233.443 post_model_ms=0.047
+(2026-04-26 00:02:59) [INFO    ] Response: 0x12280f218 /generate 200 1
+(2026-04-26 00:02:59) [INFO    ] Request: 127.0.0.1:55609 0x122815c18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=16311.685 model_start_ms=14290.264 model_ms=2021.370 model_end_ms=16311.634 post_model_ms=0.051
+(2026-04-26 00:03:01) [INFO    ] Response: 0x12280ca18 /generate 200 1
+(2026-04-26 00:03:01) [INFO    ] Request: 127.0.0.1:55615 0x12280f218 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=16335.139 model_start_ms=14286.658 model_ms=2048.416 model_end_ms=16335.073 post_model_ms=0.066
+(2026-04-26 00:03:03) [INFO    ] Response: 0x11280aa18 /generate 200 1
+(2026-04-26 00:03:03) [INFO    ] Request: 127.0.0.1:55620 0x112809418 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=14558.108 model_start_ms=12487.241 model_ms=2070.802 model_end_ms=14558.043 post_model_ms=0.065
+(2026-04-26 00:03:05) [INFO    ] Response: 0x13400fe18 /generate 200 1
+(2026-04-26 00:03:05) [INFO    ] Request: 127.0.0.1:55628 0x12280ca18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=14604.535 model_start_ms=12543.535 model_ms=2060.951 model_end_ms=14604.486 post_model_ms=0.049
+(2026-04-26 00:03:07) [INFO    ] Response: 0x13400ca18 /generate 200 1
+(2026-04-26 00:03:07) [INFO    ] Request: 127.0.0.1:55634 0x13400fe18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=16530.273 model_start_ms=14603.726 model_ms=1926.493 model_end_ms=16530.219 post_model_ms=0.054
+(2026-04-26 00:03:09) [INFO    ] Response: 0x113808818 /generate 200 1
+(2026-04-26 00:03:09) [INFO    ] Request: 127.0.0.1:55639 0x11380a418 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=16292.506 model_start_ms=14394.491 model_ms=1897.954 model_end_ms=16292.445 post_model_ms=0.061
+(2026-04-26 00:03:11) [INFO    ] Response: 0x13400de18 /generate 200 1
+(2026-04-26 00:03:11) [INFO    ] Request: 127.0.0.1:55644 0x113808818 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=8 request_id_range=167-174 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=16162.103 model_start_ms=14224.709 model_ms=1937.331 model_end_ms=16162.041 post_model_ms=0.062
+(2026-04-26 00:03:13) [INFO    ] Response: 0x12280de18 /generate 200 1
+(2026-04-26 00:03:13) [INFO    ] Request: 127.0.0.1:55650 0x11380b818 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=16072.754 model_start_ms=14016.397 model_ms=2056.300 model_end_ms=16072.697 post_model_ms=0.057
+(2026-04-26 00:03:15) [INFO    ] Response: 0x122815c18 /generate 200 1
+(2026-04-26 00:03:15) [INFO    ] Request: 127.0.0.1:55655 0x11380fa18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=16108.091 model_start_ms=14051.258 model_ms=2056.783 model_end_ms=16108.041 post_model_ms=0.050
+(2026-04-26 00:03:17) [INFO    ] Response: 0x12280f218 /generate 200 1
+(2026-04-26 00:03:17) [INFO    ] Request: 127.0.0.1:55661 0x122815c18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=16007.802 model_start_ms=14059.466 model_ms=1948.282 model_end_ms=16007.748 post_model_ms=0.054
+(2026-04-26 00:03:19) [INFO    ] Response: 0x112809418 /generate 200 1
+(2026-04-26 00:03:19) [INFO    ] Request: 127.0.0.1:55667 0x12280f218 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=16008.959 model_start_ms=13937.214 model_ms=2071.673 model_end_ms=16008.887 post_model_ms=0.071
+(2026-04-26 00:03:21) [INFO    ] Response: 0x12280ca18 /generate 200 1
+(2026-04-26 00:03:21) [INFO    ] Request: 127.0.0.1:55672 0x12280de18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=16875.152 model_start_ms=13947.911 model_ms=2927.204 model_end_ms=16875.115 post_model_ms=0.037
+(2026-04-26 00:03:24) [INFO    ] Response: 0x13400fe18 /generate 200 1
+(2026-04-26 00:03:24) [INFO    ] Request: 127.0.0.1:55681 0x112808218 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=17014.491 model_start_ms=14948.566 model_ms=2065.876 model_end_ms=17014.442 post_model_ms=0.049
+(2026-04-26 00:03:26) [INFO    ] Response: 0x11380a418 /generate 200 1
+(2026-04-26 00:03:26) [INFO    ] Request: 127.0.0.1:55687 0x11380cc18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=17145.367 model_start_ms=15116.548 model_ms=2028.775 model_end_ms=17145.323 post_model_ms=0.043
+(2026-04-26 00:03:28) [INFO    ] Response: 0x113808818 /generate 200 1
+(2026-04-26 00:03:28) [INFO    ] Request: 127.0.0.1:55696 0x11380a418 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=8 request_id_range=175-182 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=17199.403 model_start_ms=15206.931 model_ms=1992.424 model_end_ms=17199.355 post_model_ms=0.048
+(2026-04-26 00:03:30) [INFO    ] Response: 0x11380b818 /generate 200 1
+(2026-04-26 00:03:30) [INFO    ] Request: 127.0.0.1:55701 0x113808818 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=17114.818 model_start_ms=15143.063 model_ms=1971.712 model_end_ms=17114.775 post_model_ms=0.043
+(2026-04-26 00:03:32) [INFO    ] Response: 0x11380fa18 /generate 200 1
+(2026-04-26 00:03:32) [INFO    ] Request: 127.0.0.1:55706 0x12280ca18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=17252.854 model_start_ms=15058.055 model_ms=2194.756 model_end_ms=17252.811 post_model_ms=0.044
+(2026-04-26 00:03:35) [INFO    ] Response: 0x122815c18 /generate 200 1
+(2026-04-26 00:03:35) [INFO    ] Request: 127.0.0.1:55711 0x112809618 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=17316.761 model_start_ms=15304.514 model_ms=2012.190 model_end_ms=17316.704 post_model_ms=0.057
+(2026-04-26 00:03:37) [INFO    ] Response: 0x12280f218 /generate 200 1
+(2026-04-26 00:03:37) [INFO    ] Request: 127.0.0.1:55716 0x11380fa18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=17167.778 model_start_ms=15244.978 model_ms=1922.731 model_end_ms=17167.709 post_model_ms=0.069
+(2026-04-26 00:03:38) [INFO    ] Response: 0x12280de18 /generate 200 1
+(2026-04-26 00:03:38) [INFO    ] Request: 127.0.0.1:55721 0x11380b818 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=16324.242 model_start_ms=14240.921 model_ms=2083.280 model_end_ms=16324.201 post_model_ms=0.042
+(2026-04-26 00:03:41) [INFO    ] Response: 0x112808218 /generate 200 1
+(2026-04-26 00:03:41) [INFO    ] Request: 127.0.0.1:55726 0x11380e018 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=16286.677 model_start_ms=14258.021 model_ms=2028.613 model_end_ms=16286.635 post_model_ms=0.042
+(2026-04-26 00:03:43) [INFO    ] Response: 0x11380cc18 /generate 200 1
+(2026-04-26 00:03:43) [INFO    ] Request: 127.0.0.1:55731 0x13380a218 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=16393.831 model_start_ms=14258.209 model_ms=2135.560 model_end_ms=16393.768 post_model_ms=0.063
+(2026-04-26 00:03:45) [INFO    ] Response: 0x11380a418 /generate 200 1
+(2026-04-26 00:03:45) [INFO    ] Request: 127.0.0.1:55737 0x13400ca18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=8 request_id_range=183-190 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=16461.300 model_start_ms=14399.241 model_ms=2062.001 model_end_ms=16461.242 post_model_ms=0.058
+(2026-04-26 00:03:47) [INFO    ] Response: 0x113808818 /generate 200 1
+(2026-04-26 00:03:47) [INFO    ] Request: 127.0.0.1:55743 0x13400e418 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=16511.053 model_start_ms=14489.481 model_ms=2021.524 model_end_ms=16511.005 post_model_ms=0.048
+(2026-04-26 00:03:49) [INFO    ] Response: 0x12280ca18 /generate 200 1
+(2026-04-26 00:03:49) [INFO    ] Request: 127.0.0.1:55748 0x112808218 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=16393.486 model_start_ms=14315.690 model_ms=2077.749 model_end_ms=16393.440 post_model_ms=0.046
+(2026-04-26 00:03:51) [INFO    ] Response: 0x112809618 /generate 200 1
+(2026-04-26 00:03:51) [INFO    ] Request: 127.0.0.1:55753 0x112814e18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=16493.833 model_start_ms=14381.573 model_ms=2112.193 model_end_ms=16493.766 post_model_ms=0.067
+(2026-04-26 00:03:53) [INFO    ] Response: 0x11380fa18 /generate 200 1
+(2026-04-26 00:03:53) [INFO    ] Request: 127.0.0.1:55759 0x12280ca18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=16684.111 model_start_ms=14570.600 model_ms=2113.465 model_end_ms=16684.064 post_model_ms=0.046
+(2026-04-26 00:03:55) [INFO    ] Response: 0x11380b818 /generate 200 1
+(2026-04-26 00:03:55) [INFO    ] Request: 127.0.0.1:55765 0x133808a18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=16602.453 model_start_ms=14601.747 model_ms=2000.648 model_end_ms=16602.395 post_model_ms=0.058
+(2026-04-26 00:03:57) [INFO    ] Response: 0x11380e018 /generate 200 1
+(2026-04-26 00:03:57) [INFO    ] Request: 127.0.0.1:55770 0x13380b618 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=16640.852 model_start_ms=14573.597 model_ms=2067.212 model_end_ms=16640.809 post_model_ms=0.042
+(2026-04-26 00:03:59) [INFO    ] Response: 0x13380a218 /generate 200 1
+(2026-04-26 00:03:59) [INFO    ] Request: 127.0.0.1:55775 0x134018c18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=16651.164 model_start_ms=14505.218 model_ms=2145.884 model_end_ms=16651.102 post_model_ms=0.062
+(2026-04-26 00:04:01) [INFO    ] Response: 0x13400ca18 /generate 200 1
+(2026-04-26 00:04:01) [INFO    ] Request: 127.0.0.1:55781 0x13401a018 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=8 request_id_range=191-198 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=16631.461 model_start_ms=14592.419 model_ms=2038.983 model_end_ms=16631.402 post_model_ms=0.060
+(2026-04-26 00:04:03) [INFO    ] Response: 0x13400e418 /generate 200 1
+(2026-04-26 00:04:03) [INFO    ] Request: 127.0.0.1:55786 0x13280b218 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=16735.085 model_start_ms=14610.265 model_ms=2124.772 model_end_ms=16735.037 post_model_ms=0.048
+(2026-04-26 00:04:06) [INFO    ] Response: 0x112808218 /generate 200 1
+(2026-04-26 00:04:06) [INFO    ] Request: 127.0.0.1:55792 0x13280c618 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=16687.814 model_start_ms=14656.923 model_ms=2030.847 model_end_ms=16687.769 post_model_ms=0.045
+(2026-04-26 00:04:08) [INFO    ] Response: 0x112814e18 /generate 200 1
+[mini-v] POST /generate status=200 total_ms=16607.716 model_start_ms=14575.355 model_ms=2032.303 model_end_ms=16607.658 post_model_ms=0.058
+(2026-04-26 00:04:10) [INFO    ] Response: 0x12280ca18 /generate 200 1
+[mini-v] POST /generate status=200 total_ms=16870.784 model_start_ms=14494.506 model_ms=2376.243 model_end_ms=16870.749 post_model_ms=0.036
+(2026-04-26 00:04:12) [INFO    ] Response: 0x133808a18 /generate 200 1
+[mini-v] POST /generate status=200 total_ms=16966.630 model_start_ms=14870.059 model_ms=2096.535 model_end_ms=16966.594 post_model_ms=0.036
+(2026-04-26 00:04:14) [INFO    ] Response: 0x13380b618 /generate 200 1
+[mini-v] POST /generate status=200 total_ms=17140.781 model_start_ms=14899.336 model_ms=2241.403 model_end_ms=17140.739 post_model_ms=0.042
+(2026-04-26 00:04:16) [INFO    ] Response: 0x134018c18 /generate 200 1
+[mini-v] POST /generate status=200 total_ms=16865.305 model_start_ms=14994.721 model_ms=1870.541 model_end_ms=16865.262 post_model_ms=0.044
+(2026-04-26 00:04:18) [INFO    ] Response: 0x13401a018 /generate 200 1
+[mini-v] scheduler batch_size=2 request_id_range=199-200 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=17697.311 model_start_ms=14825.705 model_ms=2871.538 model_end_ms=17697.242 post_model_ms=0.069
+(2026-04-26 00:04:21) [INFO    ] Response: 0x13280b218 /generate 200 1
+[mini-v] POST /generate status=200 total_ms=18643.991 model_start_ms=15572.269 model_ms=3071.668 model_end_ms=18643.937 post_model_ms=0.054
+(2026-04-26 00:04:24) [INFO    ] Response: 0x13280c618 /generate 200 1
+(2026-04-26 00:04:24) [INFO    ] Request: 127.0.0.1:55833 0x133808a18 HTTP/1.1 POST /generate
+(2026-04-26 00:04:24) [INFO    ] Request: 127.0.0.1:55832 0x13280c618 HTTP/1.1 POST /generate
+(2026-04-26 00:04:24) [INFO    ] Request: 127.0.0.1:55831 0x112808218 HTTP/1.1 POST /generate
+(2026-04-26 00:04:24) [INFO    ] Request: 127.0.0.1:55834 0x133809e18 HTTP/1.1 POST /generate
+(2026-04-26 00:04:24) [INFO    ] Request: 127.0.0.1:55837 0x13280da18 HTTP/1.1 POST /generate
+(2026-04-26 00:04:24) [INFO    ] Request: 127.0.0.1:55836 0x134016018 HTTP/1.1 POST /generate
+(2026-04-26 00:04:24) [INFO    ] Request: 127.0.0.1:55835 0x132808e18 HTTP/1.1 POST /generate(2026-04-26 00:04:24) [INFO    ] Request: 127.0.0.1:55839 0x12280ca18 HTTP/1.1 POST /generate
+
+(2026-04-26 00:04:24) [INFO    ] Request: 127.0.0.1:55838 0x13280ee18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=9 request_id_range=201-209 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=2191.475 model_start_ms=53.279 model_ms=2138.124 model_end_ms=2191.404 post_model_ms=0.071
+(2026-04-26 00:04:26) [INFO    ] Response: 0x112808218 /generate 200 1
+(2026-04-26 00:04:26) [INFO    ] Request: 127.0.0.1:55840 0x134017418 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=4177.154 model_start_ms=2191.585 model_ms=1985.524 model_end_ms=4177.109 post_model_ms=0.045
+(2026-04-26 00:04:28) [INFO    ] Response: 0x133808a18 /generate 200 1
+(2026-04-26 00:04:28) [INFO    ] Request: 127.0.0.1:55842 0x132810218 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=6295.258 model_start_ms=4177.061 model_ms=2118.139 model_end_ms=6295.200 post_model_ms=0.059
+(2026-04-26 00:04:31) [INFO    ] Response: 0x13280c618 /generate 200 1
+(2026-04-26 00:04:31) [INFO    ] Request: 127.0.0.1:55841 0x13380b218 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=8367.345 model_start_ms=6294.687 model_ms=2072.622 model_end_ms=8367.309 post_model_ms=0.037
+(2026-04-26 00:04:33) [INFO    ] Response: 0x133809e18 /generate 200 1
+(2026-04-26 00:04:33) [INFO    ] Request: 127.0.0.1:55843 0x133811c18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=10428.997 model_start_ms=8367.293 model_ms=2061.654 model_end_ms=10428.947 post_model_ms=0.050
+(2026-04-26 00:04:35) [INFO    ] Response: 0x13280da18 /generate 200 1
+(2026-04-26 00:04:35) [INFO    ] Request: 127.0.0.1:55846 0x133814418 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=12362.740 model_start_ms=10428.373 model_ms=1934.322 model_end_ms=12362.695 post_model_ms=0.045
+(2026-04-26 00:04:37) [INFO    ] Response: 0x134016018 /generate 200 1
+(2026-04-26 00:04:37) [INFO    ] Request: 127.0.0.1:55844 0x133813018 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=14268.481 model_start_ms=12362.409 model_ms=1906.026 model_end_ms=14268.436 post_model_ms=0.045
+(2026-04-26 00:04:39) [INFO    ] Response: 0x12280ca18 /generate 200 1
+(2026-04-26 00:04:39) [INFO    ] Request: 127.0.0.1:55857 0x112808218 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=16265.214 model_start_ms=14268.440 model_ms=1996.735 model_end_ms=16265.175 post_model_ms=0.040
+(2026-04-26 00:04:41) [INFO    ] Response: 0x132808e18 /generate 200 1
+(2026-04-26 00:04:41) [INFO    ] Request: 127.0.0.1:55845 0x12280e618 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=18277.594 model_start_ms=16265.158 model_ms=2012.394 model_end_ms=18277.552 post_model_ms=0.043
+(2026-04-26 00:04:43) [INFO    ] Response: 0x13280ee18 /generate 200 1
+(2026-04-26 00:04:43) [INFO    ] Request: 127.0.0.1:55851 0x134018818 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=9 request_id_range=210-218 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=18443.348 model_start_ms=16142.273 model_ms=2301.038 model_end_ms=18443.311 post_model_ms=0.037
+(2026-04-26 00:04:45) [INFO    ] Response: 0x134017418 /generate 200 1
+(2026-04-26 00:04:45) [INFO    ] Request: 127.0.0.1:55862 0x112809618 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=18225.998 model_start_ms=16457.425 model_ms=1768.507 model_end_ms=18225.932 post_model_ms=0.067
+(2026-04-26 00:04:47) [INFO    ] Response: 0x132810218 /generate 200 1
+(2026-04-26 00:04:47) [INFO    ] Request: 127.0.0.1:55873 0x134019c18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=17859.946 model_start_ms=16108.124 model_ms=1751.786 model_end_ms=17859.910 post_model_ms=0.036
+(2026-04-26 00:04:48) [INFO    ] Response: 0x13380b218 /generate 200 1
+(2026-04-26 00:04:48) [INFO    ] Request: 127.0.0.1:55868 0x11280ee18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=17572.333 model_start_ms=15786.948 model_ms=1785.351 model_end_ms=17572.298 post_model_ms=0.034
+(2026-04-26 00:04:50) [INFO    ] Response: 0x133811c18 /generate 200 1
+(2026-04-26 00:04:50) [INFO    ] Request: 127.0.0.1:55878 0x13280da18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=17481.264 model_start_ms=15508.034 model_ms=1973.170 model_end_ms=17481.204 post_model_ms=0.060
+(2026-04-26 00:04:52) [INFO    ] Response: 0x133814418 /generate 200 1
+(2026-04-26 00:04:52) [INFO    ] Request: 127.0.0.1:55894 0x132808e18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=17427.034 model_start_ms=15549.913 model_ms=1877.061 model_end_ms=17426.975 post_model_ms=0.060
+(2026-04-26 00:04:54) [INFO    ] Response: 0x133813018 /generate 200 1
+(2026-04-26 00:04:54) [INFO    ] Request: 127.0.0.1:55889 0x11280aa18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=17502.628 model_start_ms=15520.646 model_ms=1980.967 model_end_ms=17501.613 post_model_ms=1.015
+(2026-04-26 00:04:56) [INFO    ] Response: 0x112808218 /generate 200 1
+(2026-04-26 00:04:56) [INFO    ] Request: 127.0.0.1:55904 0x13380c618 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=17953.404 model_start_ms=15505.688 model_ms=2447.658 model_end_ms=17953.346 post_model_ms=0.059
+(2026-04-26 00:04:59) [INFO    ] Response: 0x12280e618 /generate 200 1
+(2026-04-26 00:04:59) [INFO    ] Request: 127.0.0.1:55884 0x133808a18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=18003.355 model_start_ms=15941.457 model_ms=2061.848 model_end_ms=18003.305 post_model_ms=0.050
+(2026-04-26 00:05:01) [INFO    ] Response: 0x134018818 /generate 200 1
+(2026-04-26 00:05:01) [INFO    ] Request: 127.0.0.1:55899 0x13280ee18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=9 request_id_range=219-227 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=17843.949 model_start_ms=15697.167 model_ms=2146.725 model_end_ms=17843.892 post_model_ms=0.057
+(2026-04-26 00:05:03) [INFO    ] Response: 0x112809618 /generate 200 1
+(2026-04-26 00:05:03) [INFO    ] Request: 127.0.0.1:55908 0x13380da18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=18485.276 model_start_ms=16075.357 model_ms=2409.870 model_end_ms=18485.228 post_model_ms=0.048
+(2026-04-26 00:05:05) [INFO    ] Response: 0x134019c18 /generate 200 1
+(2026-04-26 00:05:05) [INFO    ] Request: 127.0.0.1:55919 0x11280d418 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=18933.782 model_start_ms=16733.805 model_ms=2199.918 model_end_ms=18933.724 post_model_ms=0.058
+(2026-04-26 00:05:07) [INFO    ] Response: 0x11280ee18 /generate 200 1
+(2026-04-26 00:05:07) [INFO    ] Request: 127.0.0.1:55914 0x13380b218 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=19355.741 model_start_ms=17148.095 model_ms=2207.610 model_end_ms=19355.705 post_model_ms=0.037
+(2026-04-26 00:05:10) [INFO    ] Response: 0x13280da18 /generate 200 1
+(2026-04-26 00:05:10) [INFO    ] Request: 127.0.0.1:55923 0x134017418 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=19478.508 model_start_ms=17382.078 model_ms=2096.371 model_end_ms=19478.449 post_model_ms=0.059
+(2026-04-26 00:05:12) [INFO    ] Response: 0x132808e18 /generate 200 1
+(2026-04-26 00:05:12) [INFO    ] Request: 127.0.0.1:55944 0x11380a818 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=19392.019 model_start_ms=17601.913 model_ms=1790.062 model_end_ms=19391.976 post_model_ms=0.043
+(2026-04-26 00:05:13) [INFO    ] Response: 0x11280aa18 /generate 200 1
+(2026-04-26 00:05:13) [INFO    ] Request: 127.0.0.1:55936 0x13380ee18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=19572.559 model_start_ms=17388.550 model_ms=2183.961 model_end_ms=19572.511 post_model_ms=0.047
+(2026-04-26 00:05:16) [INFO    ] Response: 0x13380c618 /generate 200 1
+(2026-04-26 00:05:16) [INFO    ] Request: 127.0.0.1:55959 0x12280e618 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=19138.074 model_start_ms=17146.092 model_ms=1991.913 model_end_ms=19138.006 post_model_ms=0.068
+(2026-04-26 00:05:18) [INFO    ] Response: 0x133808a18 /generate 200 1
+(2026-04-26 00:05:18) [INFO    ] Request: 127.0.0.1:55928 0x113809418 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=19235.314 model_start_ms=17076.525 model_ms=2158.729 model_end_ms=19235.254 post_model_ms=0.060
+(2026-04-26 00:05:20) [INFO    ] Response: 0x13280ee18 /generate 200 1
+(2026-04-26 00:05:20) [INFO    ] Request: 127.0.0.1:55951 0x13280ba18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=9 request_id_range=228-236 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=19109.597 model_start_ms=17089.323 model_ms=2020.228 model_end_ms=19109.551 post_model_ms=0.046
+(2026-04-26 00:05:22) [INFO    ] Response: 0x13380da18 /generate 200 1
+(2026-04-26 00:05:22) [INFO    ] Request: 127.0.0.1:55968 0x132810218 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=18752.560 model_start_ms=16699.955 model_ms=2052.551 model_end_ms=18752.505 post_model_ms=0.055
+(2026-04-26 00:05:24) [INFO    ] Response: 0x11280d418 /generate 200 1
+(2026-04-26 00:05:24) [INFO    ] Request: 127.0.0.1:55979 0x13280da18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=18630.085 model_start_ms=16552.218 model_ms=2077.819 model_end_ms=18630.037 post_model_ms=0.048
+(2026-04-26 00:05:26) [INFO    ] Response: 0x13380b218 /generate 200 1
+(2026-04-26 00:05:26) [INFO    ] Request: 127.0.0.1:55974 0x12280ca18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=18466.448 model_start_ms=16422.795 model_ms=2043.612 model_end_ms=18466.406 post_model_ms=0.042
+(2026-04-26 00:05:28) [INFO    ] Response: 0x134017418 /generate 200 1
+(2026-04-26 00:05:28) [INFO    ] Request: 127.0.0.1:55985 0x11380bc18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=18486.602 model_start_ms=16369.554 model_ms=2116.986 model_end_ms=18486.540 post_model_ms=0.063
+(2026-04-26 00:05:30) [INFO    ] Response: 0x11380a818 /generate 200 1
+(2026-04-26 00:05:30) [INFO    ] Request: 127.0.0.1:56005 0x11380d018 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=18845.579 model_start_ms=16696.859 model_ms=2148.663 model_end_ms=18845.521 post_model_ms=0.058
+(2026-04-26 00:05:32) [INFO    ] Response: 0x13380ee18 /generate 200 1
+(2026-04-26 00:05:32) [INFO    ] Request: 127.0.0.1:55997 0x13380c618 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=18691.849 model_start_ms=16661.872 model_ms=2029.869 model_end_ms=18691.741 post_model_ms=0.108
+(2026-04-26 00:05:34) [INFO    ] Response: 0x12280e618 /generate 200 1
+(2026-04-26 00:05:34) [INFO    ] Request: 127.0.0.1:56025 0x132808e18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=18806.500 model_start_ms=16699.185 model_ms=2107.192 model_end_ms=18806.377 post_model_ms=0.122
+(2026-04-26 00:05:36) [INFO    ] Response: 0x113809418 /generate 200 1
+(2026-04-26 00:05:36) [INFO    ] Request: 127.0.0.1:55992 0x12280fa18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=18681.019 model_start_ms=16648.444 model_ms=2032.519 model_end_ms=18680.963 post_model_ms=0.056
+(2026-04-26 00:05:38) [INFO    ] Response: 0x13280ba18 /generate 200 1
+(2026-04-26 00:05:38) [INFO    ] Request: 127.0.0.1:56016 0x13280ee18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=9 request_id_range=237-245 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=18728.785 model_start_ms=16660.115 model_ms=2068.610 model_end_ms=18728.724 post_model_ms=0.060
+(2026-04-26 00:05:41) [INFO    ] Response: 0x132810218 /generate 200 1
+(2026-04-26 00:05:41) [INFO    ] Request: 127.0.0.1:56030 0x122816818 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=18849.498 model_start_ms=16676.064 model_ms=2173.377 model_end_ms=18849.441 post_model_ms=0.057
+(2026-04-26 00:05:43) [INFO    ] Response: 0x13280da18 /generate 200 1
+(2026-04-26 00:05:43) [INFO    ] Request: 127.0.0.1:56042 0x11280d418 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=18851.239 model_start_ms=16771.368 model_ms=2079.824 model_end_ms=18851.192 post_model_ms=0.047
+(2026-04-26 00:05:45) [INFO    ] Response: 0x12280ca18 /generate 200 1
+(2026-04-26 00:05:45) [INFO    ] Request: 127.0.0.1:56036 0x122817c18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=18657.628 model_start_ms=16807.958 model_ms=1849.616 model_end_ms=18657.574 post_model_ms=0.055
+(2026-04-26 00:05:47) [INFO    ] Response: 0x11380bc18 /generate 200 1
+(2026-04-26 00:05:47) [INFO    ] Request: 127.0.0.1:56047 0x11280bc18 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=18649.810 model_start_ms=16540.257 model_ms=2109.508 model_end_ms=18649.764 post_model_ms=0.046
+(2026-04-26 00:05:49) [INFO    ] Response: 0x11380d018 /generate 200 1
+[mini-v] POST /generate status=200 total_ms=18601.778 model_start_ms=16501.282 model_ms=2100.443 model_end_ms=18601.725 post_model_ms=0.053
+(2026-04-26 00:05:51) [INFO    ] Response: 0x13380c618 /generate 200 1
+[mini-v] POST /generate status=200 total_ms=18490.207 model_start_ms=16572.286 model_ms=1917.870 model_end_ms=18490.157 post_model_ms=0.051
+(2026-04-26 00:05:53) [INFO    ] Response: 0x132808e18 /generate 200 1
+[mini-v] POST /generate status=200 total_ms=18373.959 model_start_ms=16382.085 model_ms=1991.829 model_end_ms=18373.915 post_model_ms=0.044
+(2026-04-26 00:05:55) [INFO    ] Response: 0x12280fa18 /generate 200 1
+(2026-04-26 00:05:55) [INFO    ] Request: 127.0.0.1:56053 0x11280e818 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=18429.731 model_start_ms=16342.315 model_ms=2087.376 model_end_ms=18429.691 post_model_ms=0.040
+(2026-04-26 00:05:57) [INFO    ] Response: 0x13280ee18 /generate 200 1
+[mini-v] scheduler batch_size=5 request_id_range=246-250 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=18601.344 model_start_ms=16364.136 model_ms=2237.162 model_end_ms=18601.298 post_model_ms=0.046
+(2026-04-26 00:05:59) [INFO    ] Response: 0x122816818 /generate 200 1
+[mini-v] POST /generate status=200 total_ms=18699.153 model_start_ms=16428.041 model_ms=2271.047 model_end_ms=18699.088 post_model_ms=0.065
+(2026-04-26 00:06:01) [INFO    ] Response: 0x11280d418 /generate 200 1
+[mini-v] POST /generate status=200 total_ms=18589.266 model_start_ms=16619.284 model_ms=1969.917 model_end_ms=18589.201 post_model_ms=0.066
+(2026-04-26 00:06:03) [INFO    ] Response: 0x122817c18 /generate 200 1
+[mini-v] POST /generate status=200 total_ms=18813.454 model_start_ms=16739.478 model_ms=2073.906 model_end_ms=18813.384 post_model_ms=0.070
+(2026-04-26 00:06:06) [INFO    ] Response: 0x11280bc18 /generate 200 1
+[mini-v] POST /generate status=200 total_ms=12703.843 model_start_ms=10694.008 model_ms=2009.772 model_end_ms=12703.780 post_model_ms=0.063
+(2026-04-26 00:06:08) [INFO    ] Response: 0x11280e818 /generate 200 1

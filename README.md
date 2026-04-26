@@ -123,6 +123,36 @@ python3 scripts/bench.py --label batch --requests 50 --concurrency 8 --server-lo
 The script prints a Markdown table with average latency, p95 latency, requests/sec,
 and average observed batch size when logs are provided.
 
+### Sample Benchmark Run
+
+This sample run shows the scheduler behavior across increasing client
+concurrency.
+
+| run | requests | concurrency | success | fail | avg latency ms | p95 latency ms | req/s | avg batch size | batches |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| batch-c1 | 50 | 1 | 50 | 0 | 2213.84 | 2256.08 | 0.45 | 1.00 | 50 |
+| batch-c2 | 50 | 2 | 50 | 0 | 4121.95 | 4444.37 | 0.48 | 2.00 | 25 |
+| batch-c4 | 50 | 4 | 50 | 0 | 7948.31 | 8469.37 | 0.49 | 3.85 | 13 |
+| batch-c8 | 50 | 8 | 50 | 0 | 15450.70 | 17318.26 | 0.47 | 7.14 | 7 |
+| batch-c16 | 50 | 16 | 50 | 0 | 28056.11 | 35780.01 | 0.48 | 8.33 | 6 |
+
+Analysis:
+
+- All 50 requests succeeded at every concurrency level, so these numbers reflect
+  real end-to-end generation rather than configuration or backend failures.
+- Average batch size increases as concurrency rises, from 1.00 at concurrency 1
+  to 8.33 at concurrency 16. This shows the 50ms micro-batching window is
+  grouping nearby requests as intended.
+- The number of scheduler batches drops from 50 to 6 across the sweep, meaning
+  the worker handles more requests per scheduling cycle under higher load.
+- Throughput stays roughly flat around 0.45-0.49 req/s because the current
+  backend still runs each prompt through a separate llama subprocess. The
+  scheduler batches requests, but model execution is still sequential inside the
+  worker.
+- Latency rises with concurrency because each request waits behind more queued
+  generations. At concurrency 16, p95 latency reaches about 35.8s, showing the
+  cost of a single-worker, sequential backend under heavier concurrent load.
+
 ## Design Tradeoffs/Learnings
 
 - **CLI subprocess backend vs in-process model runtime:** `mini-v` uses a
