@@ -1,10 +1,11 @@
 #include "model_runner.hpp"
 
-#include "llama_spawn.hpp"
+#include "llama_server_client.hpp"
 
 #include <chrono>
 #include <cstdlib>
 #include <exception>
+#include <future>
 #include <iostream>
 #include <stdexcept>
 #include <string>
@@ -71,9 +72,17 @@ void ModelRunner::worker_loop() {
                       << " queue_depth_after_batch=" << queue_depth_after_batch << '\n';
         }
 
+        std::vector<std::pair<RequestPtr, std::future<GenerateResult>>> running;
+        running.reserve(batch.size());
         for (const RequestPtr& request : batch) {
+            running.emplace_back(request, std::async(std::launch::async, [this, request] {
+                                     return run_request(*request);
+                                 }));
+        }
+
+        for (auto& [request, future] : running) {
             try {
-                request->result = run_request(*request);
+                request->result = future.get();
                 request->result_promise_.set_value(request->result);
             } catch (...) {
                 request->result_promise_.set_exception(std::current_exception());
@@ -115,7 +124,7 @@ GenerateResult ModelRunner::run_request(const InferenceRequest& request) {
     const auto t_model_start = std::chrono::steady_clock::now();
     const auto since_request_at_model_start =
         std::chrono::duration_cast<std::chrono::nanoseconds>(t_model_start - request.request_started_at);
-    LlamaRunResult gen = run_llama_completion(request.prompt, n_predict, request.params.temperature);
+    LlamaRunResult gen = run_llama_server_completion(request.prompt, n_predict, request.params.temperature);
     const auto t_model_end = std::chrono::steady_clock::now();
     const auto model_duration =
         std::chrono::duration_cast<std::chrono::nanoseconds>(t_model_end - t_model_start);
@@ -129,8 +138,8 @@ GenerateResult ModelRunner::run_request(const InferenceRequest& request) {
     if (!gen.ok) {
         out.ok = false;
         out.message = std::move(gen.message);
-        out.misconfigured = (out.message.compare(0, 11, "LLAMA_MODEL") == 0) ||
-                            (out.message.compare(0, 9, "LLAMA_CLI") == 0);
+        out.misconfigured = (out.message.compare(0, 17, "LLAMA_SERVER_URL") == 0) ||
+                            (out.message.find("llama-server") != std::string::npos);
         return out;
     }
 

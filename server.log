@@ -851,3 +851,14 @@
 (2026-04-26 00:06:06) [INFO    ] Response: 0x11280bc18 /generate 200 1
 [mini-v] POST /generate status=200 total_ms=12703.843 model_start_ms=10694.008 model_ms=2009.772 model_end_ms=12703.780 post_model_ms=0.063
 (2026-04-26 00:06:08) [INFO    ] Response: 0x11280e818 /generate 200 1
+(2026-04-26 00:26:39) [INFO    ] Closing IO service 0x132607510
+(2026-04-26 00:26:39) [INFO    ] Closing IO service 0x132607518
+(2026-04-26 00:26:39) [INFO    ] Closing IO service 0x132607520
+(2026-04-26 00:26:39) [INFO    ] Closing IO service 0x132607528
+(2026-04-26 00:26:39) [INFO    ] Closing IO service 0x132607530
+(2026-04-26 00:26:39) [INFO    ] Closing IO service 0x132607538
+(2026-04-26 00:26:39) [INFO    ] Closing IO service 0x132607540
+(2026-04-26 00:26:39) [INFO    ] Closing IO service 0x132607548
+(2026-04-26 00:26:39) [INFO    ] Closing IO service 0x132607550
+(2026-04-26 00:26:39) [INFO    ] Closing main IO service (0x1326061c8)
+(2026-04-26 00:26:39) [INFO    ] Exiting.

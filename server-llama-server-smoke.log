@@ -1,0 +1,51 @@
+(2026-04-26 00:32:04) [INFO    ] Crow/1.2.1 server is running at http://0.0.0.0:18081 using 10 threads
+(2026-04-26 00:32:04) [INFO    ] Call `app.loglevel(crow::LogLevel::Warning)` to hide Info level logs.
+(2026-04-26 00:32:12) [INFO    ] Request: 127.0.0.1:59722 0x134811818 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=1-1 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=463.883 model_start_ms=52.444 model_ms=411.402 model_end_ms=463.846 post_model_ms=0.037
+(2026-04-26 00:32:13) [INFO    ] Response: 0x134811818 /generate 200 0
+(2026-04-26 00:32:27) [INFO    ] Request: 127.0.0.1:59767 0x103008218 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=2-2 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=307.748 model_start_ms=51.275 model_ms=256.437 model_end_ms=307.712 post_model_ms=0.036
+(2026-04-26 00:32:27) [INFO    ] Response: 0x103008218 /generate 200 0
+(2026-04-26 00:32:32) [INFO    ] Request: 127.0.0.1:59781 0x10300e418 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=3-3 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=269.255 model_start_ms=55.238 model_ms=213.990 model_end_ms=269.228 post_model_ms=0.028
+(2026-04-26 00:32:33) [INFO    ] Response: 0x10300e418 /generate 200 1
+(2026-04-26 00:32:33) [INFO    ] Request: 127.0.0.1:59784 0x133011e18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=4-4 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=132.726 model_start_ms=55.237 model_ms=77.458 model_end_ms=132.695 post_model_ms=0.031
+(2026-04-26 00:32:33) [INFO    ] Response: 0x133011e18 /generate 200 1
+(2026-04-26 00:32:33) [INFO    ] Request: 127.0.0.1:59786 0x133013a18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=5-5 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=133.873 model_start_ms=55.255 model_ms=78.579 model_end_ms=133.834 post_model_ms=0.039
+(2026-04-26 00:32:33) [INFO    ] Response: 0x133013a18 /generate 200 1
+(2026-04-26 00:32:33) [INFO    ] Request: 127.0.0.1:59788 0x133011e18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=1 request_id_range=6-6 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=134.419 model_start_ms=55.076 model_ms=79.182 model_end_ms=134.257 post_model_ms=0.161
+(2026-04-26 00:32:33) [INFO    ] Response: 0x133011e18 /generate 200 1
+(2026-04-26 00:32:33) [INFO    ] Request: 127.0.0.1:59792 0x133011e18 HTTP/1.1 POST /generate
+(2026-04-26 00:32:33) [INFO    ] Request: 127.0.0.1:59791 0x133013a18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=2 request_id_range=7-8 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=167.494 model_start_ms=53.630 model_ms=113.724 model_end_ms=167.354 post_model_ms=0.140
+(2026-04-26 00:32:33) [INFO    ] Response: 0x133011e18 /generate 200 1
+(2026-04-26 00:32:33) [INFO    ] Request: 127.0.0.1:59795 0x13300d018 HTTP/1.1 POST /generate
+[mini-v] POST /generate status=200 total_ms=186.221 model_start_ms=53.333 model_ms=132.848 model_end_ms=186.180 post_model_ms=0.041
+(2026-04-26 00:32:33) [INFO    ] Response: 0x133013a18 /generate 200 1
+(2026-04-26 00:32:33) [INFO    ] Request: 127.0.0.1:59796 0x133011e18 HTTP/1.1 POST /generate
+[mini-v] scheduler batch_size=2 request_id_range=9-10 queue_depth_after_batch=0
+[mini-v] POST /generate status=200 total_ms=181.008 model_start_ms=72.191 model_ms=108.762 model_end_ms=180.953 post_model_ms=0.055
+(2026-04-26 00:32:33) [INFO    ] Response: 0x13300d018 /generate 200 1
+[mini-v] POST /generate status=200 total_ms=163.148 model_start_ms=53.465 model_ms=109.637 model_end_ms=163.102 post_model_ms=0.046
+(2026-04-26 00:32:33) [INFO    ] Response: 0x133011e18 /generate 200 1
+(2026-04-26 00:32:44) [INFO    ] Closing IO service 0x134005400
+(2026-04-26 00:32:44) [INFO    ] Closing IO service 0x134005408
+(2026-04-26 00:32:44) [INFO    ] Closing IO service 0x134005410
+(2026-04-26 00:32:44) [INFO    ] Closing IO service 0x134005418
+(2026-04-26 00:32:44) [INFO    ] Closing IO service 0x134005420
+(2026-04-26 00:32:44) [INFO    ] Closing IO service 0x134005428
+(2026-04-26 00:32:44) [INFO    ] Closing IO service 0x134005430
+(2026-04-26 00:32:44) [INFO    ] Closing IO service 0x134005438
+(2026-04-26 00:32:44) [INFO    ] Closing IO service 0x134005440
+(2026-04-26 00:32:44) [INFO    ] Closing main IO service (0x132f089a8)
+(2026-04-26 00:32:44) [INFO    ] Exiting.

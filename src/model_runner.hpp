@@ -26,9 +26,9 @@ struct GenerateResult {
     bool misconfigured = false;
     std::string model_label;
 
-    /// Time from `request_started_at` (passed to generate) until subprocess inference begins (after lock).
+    /// Time from `request_started_at` (passed to generate) until backend inference begins (after scheduling).
     std::chrono::nanoseconds since_request_at_model_start{0};
-    /// Subprocess inference only (`run_llama_completion`).
+    /// Backend inference only (`run_llama_server_completion`).
     std::chrono::nanoseconds model_duration{0};
     bool model_timings_valid = false;
 };
@@ -62,7 +62,7 @@ public:
     InferenceRequest& operator=(const InferenceRequest&) = delete;
 };
 
-// Owns request scheduling for inference and delegates execution to the llama subprocess backend.
+// Owns request scheduling for inference and delegates execution to a llama-server backend.
 class ModelRunner {
 public:
     using RequestPtr = std::shared_ptr<InferenceRequest>;

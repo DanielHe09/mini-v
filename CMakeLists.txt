@@ -39,5 +39,10 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(Crow)
 
-add_executable(server src/main.cpp src/llama_spawn.cpp src/model_runner.cpp)
+add_executable(server
+  src/main.cpp
+  src/llama_spawn.cpp
+  src/llama_server_client.cpp
+  src/model_runner.cpp
+)
 target_link_libraries(server PRIVATE Crow::Crow nlohmann_json::nlohmann_json)
